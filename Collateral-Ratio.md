@@ -11,8 +11,7 @@ description: Matrix is over-collateralized
 
 ## Collateral Ratio Structure
 
-* Matrix is an over-collateralized but capital efficient protocol. 
-* Yet contrary to Maker's DAI, the protocol has no target collateral ratio. 
+* Matrix protocol does not try to target collateral ratio while trying to be 1:1 capital efficient protocol. 
 * The way governance can influence the collateral ratio is through the structure of the slippage for IAs and HAs, 
 * For IAs the transaction fees taken from users minting and burning stablecoins 
 * For HAs joining or exiting the protocol.
@@ -21,7 +20,10 @@ The protocol's collateral ratio depends on the yield targeted by IAs and the ave
 
 ## Collateral Ratio Estimation
 
-In the protocol, over-collateralization comes from both HAs and SLPs capital. Let's try to estimate how over-collateralized the protocol could be in theory, starting with 100 of collateral in the protocol coming from users.
+-- In Matrix protocol, over-collateralization comes from both HAs and SLPs capital. 
+
+
+Let's try to estimate how over-collateralized the protocol could be in theory, starting with 100 of collateral in the protocol coming from users.
 
 If HAs cover all the collateral from users with a leverage of 3, meaning that they brought 50 of collateral to commit to 100, the protocol is collateralized at 150%.
 
