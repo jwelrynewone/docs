@@ -13,20 +13,11 @@ Core Concepts of Matrix Protocol
 
 The Matrix protocol relies on three types of agents to maintain the stability of the stablecoin :
 
-- **Stable-coins Users:** 
--   Users swap collateral against stable assets and conversely swap stable assets against a whitelisted collateral of their choice at oracle value and with minimal slippage (RN). 
--   Users must pay small transaction fees when they mint and/or burn. 
--   i.e. the price of OSMO is 10$, and the transaction fees charged are 5 bps, swap 1 OSMO for 9.995 USDM stablecoins. Conversely, with 10 USDM stablecoins, transaction fees are 10 bps, it is possible to get 0.990 OSMO.
+- **Stable-coins Users:** Users swap collateral against stable assets and conversely swap stable assets against a whitelisted collateral of their choice at oracle value and with minimal slippage (RN). Users must pay small transaction fees when they mint and/or burn. If the price of OSMO is 10$, and the transaction fees charged are 5 bps, swap 1 OSMO for 9.995 USDM stablecoins. Conversely, with 10 USDM stablecoins, transaction fees are 10 bps, it is possible to get 0.990 OSMO.
 
-- **Leverage Agents (LAs):** 
-- Get perpetual futures with their choice of leverage on a pair collateral/stablecoin. 
-- LAs insure the protocol against the volatility of the collateral on Matrix protocol. 
-- If the price of the collateral increases with respect to the value of the stablecoin, LAs make leveraged capital gains, whereas if the price decreases, LAs can lose a portion of the collateral they brought.
+- **Leverage Agents (LAs):** Get perpetual futures with their choice of leverage on a pair collateral/stablecoin. LAs insure the protocol against the volatility of the collateral on Matrix protocol. If the price of the collateral increases with respect to the value of the stablecoin, LAs make leveraged capital gains, whereas if the price decreases, LAs can lose a portion of the collateral they brought.
 
-- **Insurance Agents (IAs):** 
-- IAs lend money to the protocol and recieve the transaction fees from Matrix Protocol for stable seekers minting and burning
-- IAs obtain returns from lending of the protocol reserves to lending protocols. 
-- For Matrix, IAs serve as a backstop to the LAs. IAs may face a small slippage when they exit if the protocol is not well collateralized.
+- **Insurance Agents (IAs):** IAs lend money to the protocol and recieve the transaction fees from Matrix Protocol for stable seekers minting and burning. IAs obtain returns from lending of the protocol reserves to lending protocols. For Matrix, IAs serve as a backstop to the LAs. IAs may face a small slippage when they exit if the protocol is not well collateralized.
 
 ## Generalization to Multiple Stable Assets
 
