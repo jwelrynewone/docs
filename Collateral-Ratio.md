@@ -1,0 +1,35 @@
+---
+description: Matrix is over-collateralized
+---
+
+# Collateral Ratio
+
+## TL;DR
+
+* Thanks to its two types of liquidity providers \(LAs and IAs\), Matrix is an over-collateralized protocol. 
+* Due to the protocol's structure, the exact level of over-collateralization that will be reached is still hard to determine.
+
+## Collateral Ratio Structure
+
+* Matrix is an over-collateralized but capital efficient protocol. 
+* Yet contrary to Maker's DAI, the protocol has no target collateral ratio. 
+* The way governance can influence the collateral ratio is through the structure of the slippage for IAs and HAs, 
+* For IAs the transaction fees taken from users minting and burning stablecoins 
+* For HAs joining or exiting the protocol.
+
+The protocol's collateral ratio depends on the yield targeted by IAs and the average leverage chosen by HAs.
+
+## Collateral Ratio Estimation
+
+In the protocol, over-collateralization comes from both HAs and SLPs capital. Let's try to estimate how over-collateralized the protocol could be in theory, starting with 100 of collateral in the protocol coming from users.
+
+If HAs cover all the collateral from users with a leverage of 3, meaning that they brought 50 of collateral to commit to 100, the protocol is collateralized at 150%.
+
+In Matrix, SLPs earn a portion of the yield and rewards coming from lending the protocol's collateral. Now let's imagine that 80% of the collateral is lent, and that they are looking to earn twice as much yield as they would on another protocol like Compound or Aave.
+
+By bringing 100 of additional collateral, SLPs would earn yield on 80% x 250 = 200, that is twice the collateral that they brought initially. This means that they would earn a yield that is twice higher than what they could get by using their collateral in another platform: this corresponds to what they target in this example.
+
+In that case, the protocol is collateralized at 250%.
+
+
+
