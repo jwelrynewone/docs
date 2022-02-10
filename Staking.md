@@ -6,11 +6,11 @@ description: Details of Staking with Matrix Protocol
 
 ## TL;DR
 
-A portion of Matrix's governance tokens are distributed to protocol and agToken users.
+A portion of Matrix's governance tokens are distributed to Matrix protocol and LP token users.
 
 ## Rationale
 
-Matrix aims to be a decentralized protocol. To this extent, the protocol will only succeed if the ownership of the governance token backing the protocol is decentralized.
+- Matrix aims to be a decentralized protocol. To this extent, the protocol will only succeed if the ownership of the governance token backing the protocol is decentralized.
 
 A vast portion of the governance tokens are distributed through staking contracts by the protocol to protocol and agToken users. This include Hedging Agents, SLPs, and agToken LPs on specific pools.
 
@@ -38,7 +38,9 @@ The rewards weight allocation can change each week depending on the changes in v
 
 Stakers on contracts internal to Matrix can boost the rewards they receive by holding veMATRIX. Note that this doesn't impact the inflation rate, and only change the rewards they receive compared to other LPs on this pool.
 
-This boost can go up to x2.5 the base quantity of rewards, and depends on the liquidity on the staking contract and the veMATRIX balance of the stakers. All the information about the boost can be found on the [boost](../governance/veMATRIX/boost.md) page.
+This boost can go up to x2.5 the base quantity of rewards, and depends on the liquidity on the staking contract and the veMATRIX balance of the stakers. All the information about the boost can be found on the 
+
+%%[boost](../governance/veMATRIX/boost.md) page.
 
 {% hint style="info" %}
 The boost on rewards apply only to staking contracts internal to Matrix (gauge type 0, more info in the [gauge](../governance/veMATRIX/gauges.md) page), and not perpetuals or external ones taking place on other protocols or networks.
