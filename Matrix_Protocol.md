@@ -14,9 +14,9 @@ Core Concepts of Matrix Protocol
 The Matrix protocol relies on three types of agents to maintain the stability of the stablecoin :
 
 - **Stable-coins Users:** 
-- Users swap collateral against stable assets and conversely swap stable assets against a whitelisted collateral of their choice at oracle value and with minimal slippage (RN). 
-- Users must pay small transaction fees when they mint and/or burn. 
-- i.e. the price of OSMO is 10$, and the transaction fees charged are 5 bps, swap 1 OSMO for 9.995 USDM stablecoins. Conversely, with 10 USDM stablecoins, transaction fees are 10 bps, it is possible to get 0.990 OSMO.
+-   Users swap collateral against stable assets and conversely swap stable assets against a whitelisted collateral of their choice at oracle value and with minimal slippage (RN). 
+-   Users must pay small transaction fees when they mint and/or burn. 
+-   i.e. the price of OSMO is 10$, and the transaction fees charged are 5 bps, swap 1 OSMO for 9.995 USDM stablecoins. Conversely, with 10 USDM stablecoins, transaction fees are 10 bps, it is possible to get 0.990 OSMO.
 
 - **Leverage Agents (LAs):** 
 - Get perpetual futures with their choice of leverage on a pair collateral/stablecoin. 
