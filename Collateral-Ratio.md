@@ -20,18 +20,16 @@ The protocol's collateral ratio depends on the yield targeted by IAs and the ave
 
 ## Collateral Ratio Estimation
 
--- In Matrix protocol, over-collateralization comes from both HAs and SLPs capital. 
+-- In Matrix protocol, over-collateralization comes from both LAs and IAs liqudity. 
 
+## example 
 
-Let's try to estimate how over-collateralized the protocol could be in theory, starting with 100 of collateral in the protocol coming from users.
-
-If HAs cover all the collateral from users with a leverage of 3, meaning that they brought 50 of collateral to commit to 100, the protocol is collateralized at 150%.
-
-In Matrix, SLPs earn a portion of the yield and rewards coming from lending the protocol's collateral. Now let's imagine that 80% of the collateral is lent, and that they are looking to earn twice as much yield as they would on another protocol like Compound or Aave.
-
-By bringing 100 of additional collateral, SLPs would earn yield on 80% x 250 = 200, that is twice the collateral that they brought initially. This means that they would earn a yield that is twice higher than what they could get by using their collateral in another platform: this corresponds to what they target in this example.
-
-In that case, the protocol is collateralized at 250%.
+- Estimate how over-collateralized the Matrix protocol could be in theory, starting with 1000 of OSMO collateral in the protocol coming from users.
+- If LAs cover all the collateral from users with a leverage of 3, meaning that they brought 500 OSMO to commit to 1000, the protocol is collateralized at 150%.
+- In Matrix, IAs earn a portion of the yield and rewards coming from lending the protocol's collateral. 
+- If 80% of the collateral is lent, and IAs are looking to earn twice as much yield as they would on another protocol.
+- Bringing 1000 OSMO, IAs would earn yield on 80% x 2500 = 2000, that is twice the collateral that they brought initially. 
+- This means that they would earn a yield that is twice higher than what they could get by using their collateral in another platform: this corresponds to what they target. The protocol is collateralized at 250%.
 
 
 
