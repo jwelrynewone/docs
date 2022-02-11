@@ -45,3 +45,50 @@ Then,
 - if INSusd < 0, UXD protocol will do an auction of governance tokens(UXP) to the public and replenish the insurance fund until INSusd > 0.
 
 Besides the auction of UXP, there will be a constant positive flow of funds to the insurance fund when the funding rate is positive, since part of the funding rate will go to the insurance fund
+
+## Protocol Challenges
+
+ - Outside of general smart contract risk, there exist a few key challenge areas for a protocol like UXD to not just work, but to scale efficiently to the size a stablecoin protocol needs.
+
+## Perpetual Market Size 
+- Currently there is roughly $30M in open interest on Perpetual Exchanges. 
+- Stablecoin market caps require nearly $1B in market cap to be considered successful and to be considered sufficiently liquid for widespread use. 
+- For USDM to reach significant levels of adoption, the amount of market activity on Perpetual exchanges would need to scale significantly. 
+- At the current size of the perp markets, USDM would almost assuredly drive the funding rates negative on the exchanges since it would create an imbalance of positions to the short side. 
+- However, this would attract more traders to trade against cheaper fund borrowing rates so there is a self-referential playbook here that can scale both USDM and the perpetual markets on Solana.
+
+## Negative Funding Rates 
+- Along the same vein, when funding rates on the perpetual exchange turn negative, it’s on the USDM protocol itself to pay out. 
+- Usually, funding rates are positive in crypto due to the much larger demand to be on the long side of assets and in this case USDM protocol would be making additional money via traders paying it funding. 
+- However, if USDM scales faster than OI on the exchanges, there exists a real possibility funding could get driven negative, and the protocol would be paying. 
+- To counteract this probability, sufficient funds are stored in the insurance fund to cover negative funding periods (which have historically not been long in duration). 
+- In the unlikely event that the insurance fund is depleted paying funding payments, additional UXP would be auctioned off to replenish the insurance fund. 
+- Even in this unlikely event, the insurance fund would not rapidly be depleted via funding payments (no flash crashes, just predictable payments over known periods of time) so USDM holders would nearly always be able to redeem for collateral.
+
+## Exchange Exit Liquidity 
+
+- Related to exchange sizes, there needs to exist enough counter side liquidity for USDM to unwind its short positions. 
+- USDM by design puts on short positions every time a user deposits collateral into the protocol, but when the USDM holder wishes to exchange the stablecoin for their collateral, the short position needs to be unwound and the collateral returned. 
+- For this to happen, there needs to be liquidity (users or market makers) on the exchange willing to sell tokens to USDM protocol in the size required. 
+- This risk is more prevalent in times of market volatility.
+
+## Treasury Management 
+
+- USDM as a protocol is designed not to make money from UXD users but in the way it manages its collateral (positive funding rates) and its insurance fund. 
+- As the insurance fund is deployed in asset management strategies, the benefit is clearly the capital appreciation of the fund size. 
+- However, on the flip side there is introduced risk that funds are subjected to which needs to be considered. 
+- Not a great concern as presumably the fund will be deployed in low-risk strategies with the only notable risk being smart contract risk.
+
+## USDM Supply and Demand 
+
+- Every stablecoin is subject to fluctuations in demand which can drive prices off peg. 
+- What matters is the ability of the protocol to absorb price volatility via redemption mechanisms to remain at peg or user confidence in the future redemption abilities (fiat stablecoins)?
+- USDM offers both avenues but as a growing stablecoin, it’s still subjected to the risk - especially in its early stages when concentrated amounts of USDM can experience more volatility pressure than if the supply of USDM was vast.
+
+## Looking Ahead
+
+- USDM offers a unique solution to the stablecoin landscape. 
+- As Cosmos continues to build out its DeFi ecosystem, having truly decentralized, native stablecoins will greatly benefit the ecosystem. 
+- Market demand for this type of solution is rapidly increasing, not just on Cosmos, but across DeFi as projects and users alike look for stable assets without centralization risk and that synergistically benefit the ecosystem. 
+- USDM has the potential to propel Cosmos derivatives market into new territory by catalyzing the cost of trading down and providing sufficient stable liquidity.
+
