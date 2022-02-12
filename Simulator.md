@@ -44,7 +44,9 @@ Matrix Simulator
 - Version 1 objective - Can we mint 1 billion USDM in the shortest amount of time?
 - Danger -> IF running out of money (60% drawdown --> Drawdown metric)
 - Gov token : 1 billion NEO, you create a governance contract with a lockup --> 4/2/1/0.6 --> VNeo --> 2.5/1.25/0.625/0.3125
-- **Demand --> (1 million USDM, and 0.5% vNEO) --> Daofying the listing of the perps --> create a proposal to whitelist perps on certain tokens ---> OSMO/USDM ---> longs/shorts --> fees and liquidation goes to that DAO.** 
+
+## How to create Demand for minting of stable coin USDM
+- **Demand --> (1 million USDM, and 0.5% vNEO) --> Daofying the listing of the perps --> create a proposal to whitelist perps on certain tokens ---> OSMO/USDM ---> longs/shorts --> fees and liquidation goes to that DAO and IF.** 
 
 ---> Earn Yield --> **UMEE partnership (ANCHOR)**
 
@@ -60,14 +62,14 @@ Matrix Simulator
 
 1. OSMO goes to 11$
 2. Matrix Expsoure: 110,000 USD, PNL : 10,000 USD
-3. Whole Pnl goes to the LA : 10,000 
+3. Whole Pnl of 10,000$ worth OSMO goes to the LA  
 4. If the LA wants to take it out -> fees are decided based on the CR and then send to the IF
 
 # Scenario 2 (Market goes down)
 
 1. OSMO goes to 9$
 2. Matrix Expsoure: 90,000 USD, PNL : -10,000 USD
-3. LAs 10,000$ is liquidated 
+3. LAs OSMO worth of 10,000$ is liquidated 
 4. If the LA wants to take it out -> fees are decided based on the CR and then send to the IF
 
 # What is the incentive for the LA come to the protocol if we enter a prolong bearish market ?
