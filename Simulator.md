@@ -31,11 +31,28 @@ Matrix Simulator
 - IAs also recieve the asset management fees of the remaining uninsured collateral and the investment of their money on AAVE using gravity bridge.
 - IAs concur fees while taking out their capital or locking their LP tokens in governance contract -> these fees go back to the Insurance Fund.
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## Demand creator on the white-listed collateral
+- The LAs and the IAs have to buy the collateral on a dex
+- This makes Matrix Protocol a major demand creator for the collateral token
+- This design should make us the protocol to take leverage 
+
+## Insurance Fund Bankruptcy problem
+- 12 months --> 10% of the supply to pay for the negative funding rate 
+- Incentive mechanism design --
+- Version 1 objective - Can we mint 1 billion USDM in the shortest amount of time?
+- Danger -> IF running out of money (60% drawdown --> Drawdown metric)
+- Gov token : 1 billion NEO, you create a governance contract with a lockup --> 4/2/1/0.6 --> VNeo --> 2.5/1.25/0.625/0.3125
+- **Demand --> (1 million USDM, and 0.5% vNEO) --> Daofying the listing of the perps --> create a proposal to whitelist perps on certain tokens ---> OSMO/USDM ---> longs/shorts --> fees and liquidation goes to that DAO.** 
+
+---> Earn Yield --> **UMEE partnership (ANCHOR)**
+
 # Math
 1. Let say the user brings 10000 OSMO to Mint —> USDM 
 2. Current OSMO PRICE = 10
 3. Matrix Protocol Exposure = 100,000 USD 
-4. LA brings 10,000 USD and chooses CR (coverage ratio : 100) --> implied leverage = 10
+4. LA bring OSMO worth 10,000 USD and chooses CR (coverage ratio : 100) --> implied leverage = 10
 5. LA would be liquidated in a 10% down move 
 6. Major incentive of the LA to come to the Matrix protocol is —> they can go long a perp with zero funding rate for a long period of time
 
