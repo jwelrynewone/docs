@@ -79,7 +79,7 @@ Matrix Simulator
    t_2 = 1000
    ….
    t_6 = 1000
-3. So the LA has made 6000$ and lost 10000$ at the end of 6 hours -> Net pnl is -4000$
+3. So the LA has made OSMO worth 6000$ and lost OSMO worth 10000$ at the end of 6 hours -> Net pnl is -4000$
 4. Since LAs can come in during bearish market, the fees to get perp for the stable-coin collateral minted is a non-linear function. The first agent entry is lot cheaper than the 100th entry. FEES is non linear function —> replinishes the IF
 
 
