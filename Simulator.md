@@ -58,14 +58,14 @@ Matrix Simulator
 
 # Scenario 1 (Market goes up)
 
-1. OSMO goes to 11 $
+1. OSMO goes to 11$
 2. Matrix Expsoure: 110,000 USD, PNL : 10,000 USD
 3. Whole Pnl goes to the LA : 10,000 
 4. If the LA wants to take it out -> fees are decided based on the CR and then send to the IF
 
 # Scenario 2 (Market goes down)
 
-1. OSMO goes to 9 $
+1. OSMO goes to 9$
 2. Matrix Expsoure: 90,000 USD, PNL : -10,000 USD
 3. LAs 10,000$ is liquidated 
 4. If the LA wants to take it out -> fees are decided based on the CR and then send to the IF
