@@ -57,7 +57,7 @@ description: How the Matrix protocol behaves in case of distress?
 - In the meantime, transaction fees for users minting and burning adjust automatically based on the hedging ratio of the protocol. 
 - This means that it is more expensive for users to mint stablecoins \(thus adding collateral into the protocol\) if the collateral that is already there is not hedged enough by Hedging Agents.
 - Besides, if the collateral ratio keeps decreasing, governance can choose at its discretion to mitigate bank run scenari by increasing burn transaction fees by inducing a collateral ratio dependency.
-- You can have a look at [Angle's analytics](https://analytics.angle.money) page to follow the different hedge and collateral ratios, and the current transaction fees.
+- You can have a look at to follow the different hedge and collateral ratios, and the current transaction fees.
 
 ## Collateral Diversification and Settlement
 
@@ -69,10 +69,7 @@ description: How the Matrix protocol behaves in case of distress?
 - If there is collateral left in the pool at this time, it is sent to another contract that is specifically designed to handle the settlement.
 - The goal of settlement is to choose how much each category of stakeholders is going to get based on their claims, and then to reimburse each users, HAs and SLPs which asked it based on that. 
 - This process has been thought to heavily favor governance token and owners.
-
-The following page explains how in details this collateral settlement process works:
-
-{% page-ref page="collateral-settlement.md" %}
+- The following page explains how in details this collateral settlement process works:
 
 ## Stablecoins Independence
 
