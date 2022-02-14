@@ -2,13 +2,13 @@
 description: Common questions about IAs
 ---
 
-# FAQ - Standard Liquidity Providers
+# FAQ - Insurance Agents
 
 ## How do IAs earn their interest?
 
-When contributing to a collateral pool as a Standard Liquidity Provider, a SLP receive a token that we call **sanToken**, marking her belonging in the pool, just like a lender on Compound would receive a cToken. For instance, a SLP bringing USDC to the protocol for the agEUR coin would receive sanUSDC_EUR tokens based on the current exchange rate between the sanTokens and USDC.
-
-By minting sanTokens, IAs earn interest through the sanToken's exchange rate (sanRate), which increases in value relative to the underlying asset \(USDC in the example\) as transaction fees and interest accrue to that pool.
+- When contributing to a collateral pool as an IA, an IA receive a token that we call **LP token**, marking her belonging in the pool, just like a lender on Compound would receive a cToken. 
+- For instance, a IA bringing capital to the protocol for the USDM coin would receive LPtoken_USDM tokens based on the current exchange rate between the LP token and USDC.
+- By minting LP tokens, IAs earn interest through the sanToken's exchange rate (sanRate), which increases in value relative to the underlying asset \(USDC in the example\) as transaction fees and interest accrue to that pool.
 
 ## How does the sanRate vary?
 
@@ -20,11 +20,11 @@ The sanRate is common for all IAs.
 
 ## Do you have an example of how interest accrue?
 
-Let's say that a SLP supplies 1000 USDC to the protocol for the agEUR stablecoin when the exchange rate between sanUSDC_EUR and USDC (sanRate) is 1.
+Let's say that a IA supplies 1000 USDC to the protocol for the agEUR stablecoin when the exchange rate between sanUSDC_EUR and USDC (sanRate) is 1.
 
 They would receive 1000 \(1000/1\) sanUSDC_EUR.
 
-A few months later, the SLP decides it's time to withdraw USDC from the protocol and the sanRate is now 1.2.
+A few months later, the IA decides it's time to withdraw USDC from the protocol and the sanRate is now 1.2.
 
 - The SLP sanUSDC_EUR are now worth 1200 USDC \(1000 \* 1.2\)
 - They could withdraw their 1200 USDC, which would redeem all sanUSDC_EUR
