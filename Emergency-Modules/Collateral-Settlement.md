@@ -6,7 +6,7 @@ description: How the protocol manages to liquidate a collateral for a given stab
 
 ## Use Cases
 
-Collateral settlement is the process by which the protocol goes through after a collateral is revoked for a stablecoin of the protocol. The goal of the process is to redistribute what remained of that collateral in the protocol. The settlement process chooses how much of this collateral each category of stakeholders \(users, HAs, SLPs\) is going to get based on the claims they made, and then reimburses each user, HA or SLP who made a claim based on that.
+Collateral settlement is the process by which the protocol goes through after a collateral is revoked for a stablecoin of the protocol. The goal of the process is to redistribute what remained of that collateral in the protocol. The settlement process chooses how much of this collateral each category of stakeholders \(users, LAs, IAs\) is going to get based on the claims they made, and then reimburses each user, HA or SLP who made a claim based on that.
 
 Besides a long term unstable position of the protocol requiring the protocol to stop relying on a collateral, collateral settlement can also be activated by governance in case of a major security breach or a cyber-attack.
 
@@ -30,12 +30,11 @@ Stable holders (users) can do so by sending stablecoins associated to this colla
 
 HAs who had perpetuals of the concerned collateral can come, point to a perpetual they own, and make their claim. The value of their claim is computed based on the oracle value at the time at which settlement was initiated.
 
-SLPs can claim collateral by sending their sanTokens. Again here, HAs and SLPs can also choose to send governance tokens to see a portion of their claim treated preferably.
+IAs can claim collateral by sending their sanTokens. Again here, HAs and IAs can also choose to send governance tokens to see a portion of their claim treated preferably.
 
-After the claim period, the protocol computes the amount it has in reserves, converts the claims of users which were in stablecoin value in collateral value and then computes the total amount of claims and how much of collateral each category of stakeholders should receive. The protocol pays back stable holders with governance tokens first, then stable holders without governance tokens, followed by HAs and SLPs which had governance tokens, and lastly HAs and SLP without governance tokens.
+After the claim period, the protocol computes the amount it has in reserves, converts the claims of users which were in stablecoin value in collateral value and then computes the total amount of claims and how much of collateral each category of stakeholders should receive. The protocol pays back stable holders with governance tokens first, then stable holders without governance tokens, followed by HAs and IAs which had governance tokens, and lastly HAs and IA without governance tokens.
 
 Each stakeholder in a category therefore gets reimbursed proportionally to their claim with a proportional ratio that depends on their category. It is hence possible that stable holders which came with governance tokens are fully reimbursed, that stable holders without governance tokens only get half of their claim and that others do not get anything back. If a category \(like LPs with governance tokens\) is not fully paid back, then the following categories \(in this case LPs without governance tokens\) won't be paid back as well.
-
 
 
 ## Governance Token Holders Privilege
@@ -55,8 +54,8 @@ At the end of the claim period, the protocol computes how much each category sho
 
 The collateral settlement process concerns a single collateral type for a given stablecoin. To trigger the complete emergency shutdown of a stablecoin, collateral settlement should be initiated for all collateral accepted for this stablecoin.
 
-If different collateral settlements are triggered for a same stablecoin, stablecoin holders have the possibility to redeem the collateral of their choice. If two collaterals `A` and `B` are being settled, to prevent stablecoin holders from all redeeming collateral `A` and not collateral `B` thus penalizing SLPs and HAs of collateral `A`, the protocol caps the amount it is possible to claim for users for a given stablecoin. The cap is set to the same quantity as the one used to compute Hedging Agents hedge: it is the amount of collateral corresponding to the outstanding stablecoin value.
+If different collateral settlements are triggered for a same stablecoin, stablecoin holders have the possibility to redeem the collateral of their choice. If two collaterals `A` and `B` are being settled, to prevent stablecoin holders from all redeeming collateral `A` and not collateral `B` thus penalizing SLPs and HAs of collateral `A`, the protocol caps the amount it is possible to claim for users for a given stablecoin. The cap is set to the same quantity as the one used to compute Leverage Agents hedge: it is the amount of collateral corresponding to the outstanding stablecoin value.
 
-Another remark is that the reason why stable holders are not handled with the same oracle value as HAs is to prevent arbitrages among them during collateral settlement. If the value used to compute the claims in collateral was that of the beginning of the claim period \(the one used for HA\), then if this value decreased during the claim period meaning that stable holders would end up getting less than what they would get at current oracle value: there could be incentives for them not to claim anything because they could be treated at a more advantageous oracle value by burning their stablecoins and asking for a collateral that is not being settled.
+Another remark is that the reason why stable holders are not handled with the same oracle value as LAs is to prevent arbitrages among them during collateral settlement. If the value used to compute the claims in collateral was that of the beginning of the claim period \(the one used for LA\), then if this value decreased during the claim period meaning that stable holders would end up getting less than what they would get at current oracle value: there could be incentives for them not to claim anything because they could be treated at a more advantageous oracle value by burning their stablecoins and asking for a collateral that is not being settled.
 
-If after a collateral settlement process there is collateral left because of a protocol surplus, or because not all stable holders and LPs came to claim during the claim period, governance has the ability to allocate the leftover collateral where it wants to \(for instance to SLPs of another collateral type\).
+If after a collateral settlement process there is collateral left because of a protocol surplus, or because not all stable holders and LPs came to claim during the claim period, governance has the ability to allocate the leftover collateral where it wants to \(for instance to IAs of another collateral type\).
