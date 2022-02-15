@@ -6,7 +6,7 @@ description: How the Matrix protocol behaves in case of distress?
 
 ## TL;DR
 
-- Matrix is mostly at risk when a sudden collateral price decrease is combined with a severe drop in demand for leverage by Hedging Agents.
+- Matrix is mostly at risk when a sudden collateral price decrease is combined with a severe drop in demand for leverage by Leverage Agents.
 - The protocol has the safety modules and incentives to be able to resist and maintain peg even in extreme market conditions.
 
 ## Protocol's Risks
@@ -14,7 +14,7 @@ description: How the Matrix protocol behaves in case of distress?
 - As with any stablecoin protocol, the main risk is to be unable to maintain convertibility between stablecoins and collateral, which might affect peg. 
 - In this case, governance might have to deter exits with high fees, or to freeze transactions. 
 - As long as the protocol remains over-collateralized, there is no risk that it happens.
-- The protocol becomes under-collateralized if is not hedged enough by HAs, and there are not enough SLPs to over-collateralize the protocol.
+- The protocol becomes under-collateralized if is not hedged enough by LAs, and there are not enough SLPs to over-collateralize the protocol.
 - Here, we explore all the responses the protocol can give in case of distress. 
 - It is interesting to note that it is most at risk when both events occur: 
 - decrease in demand for leverage longs, and collateral prices drop \(or increase in the price of the asset the protocol tries to peg\). 
@@ -23,8 +23,8 @@ description: How the Matrix protocol behaves in case of distress?
 
 ## Hedging Agents Insurance
 
-- Hedging Agents can enter the protocol with even very small leverage like x1.01, or x1.1. 
-- To be over-collateralized, the protocol doesn't need HAs to take on highly leveraged positions.
+- Leverage Agents can enter the protocol with even very small leverage like x1.01, or x1.1. 
+- To be over-collateralized, the protocol doesn't need LAs to take on highly leveraged positions.
 - Even if demand for perpetual futures decreases, the protocol should remain cheaper than most protocols allowing to get on-chain leverage, like Aave or Compound. 
 - In normal times, when demand for leverage is high and almost all the collateral is hedged, transaction fees are set so that it is slightly more expensive to open a position. 
 - When demand for perpetual futures drop, fees drop \(following the hedging curve\) and Angle becomes much cheaper than other on-chain protocols.
@@ -42,7 +42,7 @@ description: How the Matrix protocol behaves in case of distress?
 - While everything that can be done with this surplus is still to be determined \(like auctions where governance tokens are burnt against a portion of the surplus\), 
 - the surplus mostly serves as the first buffer to better deal with drops in collateral ratio.
 
-## Standard Liquidity Providers Insurance of the Insurance
+## Insurance agents for Insurance of the Insurance
 
 - If the incentives put in place do not attract enough HAs to fully insure the protocol against the volatility of the collateral and if there is not enough surplus accumulated, the protocol can rely on the collateral brought by Standard Liquidity Providers to ensure full convertibility of the stablecoins. 
 - There is an equilibrium threshold to expect with Standard Liquidity Providers \(SLPs\). 
@@ -55,7 +55,7 @@ description: How the Matrix protocol behaves in case of distress?
 ## Dynamic Transaction Fees for Users
 
 - In the meantime, transaction fees for users minting and burning adjust automatically based on the hedging ratio of the protocol. 
-- This means that it is more expensive for users to mint stablecoins \(thus adding collateral into the protocol\) if the collateral that is already there is not hedged enough by Hedging Agents.
+- This means that it is more expensive for users to mint stablecoins \(thus adding collateral into the protocol\) if the collateral that is already there is not hedged enough by Leverage Agents.
 - Besides, if the collateral ratio keeps decreasing, governance can choose at its discretion to mitigate bank run scenari by increasing burn transaction fees by inducing a collateral ratio dependency.
 - You can have a look at to follow the different hedge and collateral ratios, and the current transaction fees.
 
