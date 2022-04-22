@@ -6,14 +6,14 @@ description: Getting stablecoins from collateral and conversely
 
 ## TL;DR
 
-- Users of Matrix protocol can mint stablecoins at oracle value by giving collateral to the protocol.
+- Users of Nibiru protocol can mint stablecoins at oracle value by giving collateral to the protocol.
 - They can always burn their stablecoins and get collateral in exchange at oracle value too.
 - The experience for users is that of a swap except for the fact that there is no slippage on the price at which transactions are executed.
 - They pay small transaction fees (potentially around 0.3%) when they mint and when they burn.
 
 ## Principle
 
-Matrix is designed to be as simple as possible from a user perspective and like USDC (or also USDT), it relies on full convertibility of collateral and stable assets, meaning users can swap collateral against stablecoins as well as stablecoins against collateral at any time.
+Nibiru is designed to be as simple as possible from a user perspective and like USDC (or also USDT), it relies on full convertibility of collateral and stable assets, meaning users can swap collateral against stablecoins as well as stablecoins against collateral at any time.
 
 To generate a stable asset, a user just has to send to the protocol a whitelisted collateral. An oracle then determines how many stablecoins (`ERC-20`tokens) need to be minted and sent to the user. Like in an AMM swap, the collateral received by the protocol does no longer belong to the user.
 
@@ -39,7 +39,7 @@ The convertibility permitted by the swaps described above is what makes the toke
 
 Let’s say that 1 agEUR trades at a price above 1€. The incentive is to mint agEUR for 1€ worth of collateral and then sell these newly minted agEUR for more than 1€ on the market. This reduces the price closer to 1€.
 
-If 1 agEUR trades at a price below 1€, the incentive is to buy agEUR on the market for less than 1€ and get 1€ worth of collateral by swapping the agEUR bought using Matrix. This increases the price closer to 1€.
+If 1 agEUR trades at a price below 1€, the incentive is to buy agEUR on the market for less than 1€ and get 1€ worth of collateral by swapping the agEUR bought using Nibiru. This increases the price closer to 1€.
 
 ### Deviations From Peg
 
@@ -53,9 +53,9 @@ A stablecoin is only stable relative to the value of the oracle that was chosen 
 
 ## Transaction Fees
 
-Transaction fees are taken from users minting and burning. While this is a way to prevent front-running attacks (details [here](https://blog.Matrix.money/Matrix-research-series-part-2-fees-and-front-running-resistance-for-users-393e0ae14b20)), it also helps to incentivize liquidity providers contributing to the protocol.
+Transaction fees are taken from users minting and burning. While this is a way to prevent front-running attacks (details [here](https://blog.Nibiru.money/Nibiru-research-series-part-2-fees-and-front-running-resistance-for-users-393e0ae14b20)), it also helps to incentivize liquidity providers contributing to the protocol.
 
-The structure of the mint transaction fees differs from that of the burn transaction fees. In all cases, like in a utilization curve for a lending protocol, fees depend on the coverage ratio that is the ratio between the amount covered by HAs and the amount that HAs should cover for this collateral type. The curve specifying the value of the fees as a function of the coverage ratio is called a coverage curve. You can see the current fees situation in [Matrix's analytics](https://analytics.Matrix.money) page.
+The structure of the mint transaction fees differs from that of the burn transaction fees. In all cases, like in a utilization curve for a lending protocol, fees depend on the coverage ratio that is the ratio between the amount covered by HAs and the amount that HAs should cover for this collateral type. The curve specifying the value of the fees as a function of the coverage ratio is called a coverage curve. You can see the current fees situation in [Nibiru's analytics](https://analytics.Nibiru.money) page.
 
 - Minting: The concept is that the higher the coverage ratio, the more the protocol is able to cover the collateral from people issuing new stablecoins, and the lower the minting fees should be.
 - Burning: The less collateral is covered by Hedging Agents, the bigger the volatility risk faced by the protocol is for this collateral type, the cheaper it is to burn and hence to decrease this risk.

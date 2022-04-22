@@ -14,10 +14,10 @@ description: Leverage Agents: Insuring the protocol against collateral volatilit
 
 ## Principle
 
-- Matrix Protocol by essence is highly dependent on collateral volatility. 
+- Nibiru Protocol by essence is highly dependent on collateral volatility. 
 - Let's say one stable seeker brings 1 OSMO against 200 USDM and the price of OSMO then decreases by 50% (from 200 to 100). The protocol then needs to find 1 OSMO to ensure the redeemability of the 200 USDM of stablecoins and maintain their stability.
 - We say that the protocol needs to insure itself against the volatility of the collateral. While surges in collateral prices are beneficial to the protocol, drops, as in the example above, are less desirable.
-- For this reason, Matrix transfers this volatility to other actors looking to get leverage on the collateral: Levarage Agents (LAs). They are the agents insuring the protocol against drops in collateral prices, making sure that the protocol has always enough reserves to reimburse users.
+- For this reason, Nibiru transfers this volatility to other actors looking to get leverage on the collateral: Levarage Agents (LAs). They are the agents insuring the protocol against drops in collateral prices, making sure that the protocol has always enough reserves to reimburse users.
 
 ## Perpetual Futures
 

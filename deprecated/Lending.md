@@ -1,5 +1,5 @@
 ---
-description: Growing surplus, incentivizing veMATRIX holders, and offering yield to the protocol's liquidity providers
+description: Growing surplus, incentivizing veNIBI holders, and offering yield to the protocol's liquidity providers
 ---
 
 # Lending Strategies - Yield on Reserves
@@ -8,18 +8,18 @@ description: Growing surplus, incentivizing veMATRIX holders, and offering yield
 
 - The protocol earns interest on the reserves it holds by lending it to other platforms.
 - To do so, the protocol relies on strategies which decide how much and in which protocols reserves should be placed.
-- Matrix is modular: there can be multiple strategies for a single collateral, each interacting with multiple platforms.
+- Nibiru is modular: there can be multiple strategies for a single collateral, each interacting with multiple platforms.
 - Strategies are what enables the protocol to offer higher yield to SLPs than what they would get by lending directly to other protocols.
 
 ## Rationale
 
  - Lending a fraction of the protocol reserves to other lending platforms is part of what makes the protocol attractive to IAs. 
- - By lending reserves, the protocol can at the same time offer interest to IAs, accumulate some reserves, and incentivize veMATRIX holders.
+ - By lending reserves, the protocol can at the same time offer interest to IAs, accumulate some reserves, and incentivize veNIBI holders.
  - The distribution of interest between SLPs, veMATRX holders, and protocol reserves, is dictated by two parameters.
 
 ## Design
 
- - The design of that has been heavily inspired by what [Yearn](https://yearn.finance) does. Matrix relies on strategies, that themselves use Lender's contracts interacting with lending and other yield farming protocols.
+ - The design of that has been heavily inspired by what [Yearn](https://yearn.finance) does. Nibiru relies on strategies, that themselves use Lender's contracts interacting with lending and other yield farming protocols.
  - Just like on Yearn, new strategies to get some yield on the protocol's collateral can be added along the way by governance votes. Each strategy can also support multiple lending platforms or protocols.
  - Each collateral for each stablecoin has its set of strategies to get some yield on it. For instance, for a agEUR stablecoin backed by USDC and DAI, we may have for the USDC collateral a single strategy trying to always optimize to get the best APY between Compound and Aave, and for the DAI stablecoin two strategies, one that just consists in lending to Compound and one that consists in optimizing between Aave and Cream.
  - The first strategy implemented simply consists in optimizing lending between Compound and Aave and pick the one with the best APY.

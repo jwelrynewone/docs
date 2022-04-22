@@ -1,12 +1,12 @@
 ---
-description: How the Matrix protocol behaves in case of distress?
+description: How the Nibiru protocol behaves in case of distress?
 ---
 
 # Risks and Emergency Modules
 
 ## TL;DR
 
-- Matrix is mostly at risk when a sudden collateral price decrease is combined with a severe drop in demand for leverage by Leverage Agents.
+- Nibiru is mostly at risk when a sudden collateral price decrease is combined with a severe drop in demand for leverage by Leverage Agents.
 - The protocol has the safety modules and incentives to be able to resist and maintain peg even in extreme market conditions.
 
 ## Protocol's Risks

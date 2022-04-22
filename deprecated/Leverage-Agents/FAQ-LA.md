@@ -19,7 +19,7 @@ Since the protocol is fully hedged by Leverage Agents with perpetual futures, it
 ## Is there a cost for holding perpetual futures as a LA?
 
 - No, there is no funding rate like in centralized exchanges proposing perpetual futures. 
-- The only fees paid with Matrix perpetuals are entry and exit fees.
+- The only fees paid with Nibiru perpetuals are entry and exit fees.
 - There are no fees for removing or adding collateral as margin to a position.
 
 ## Can HAs always open new positions with the protocol?
@@ -116,7 +116,7 @@ This is a parameter that can be modified by protocol governance.
 
 Yes. If the [margin ratio](https://docs.angle.money/concepts/hedging-agents#has-liquidations) goes below a certain threshold, your position should get liquidiated by keepers. The maintenance margin depends on the stablecoin/collateral pair concerned. For instance for wETH/EUR pair, the maintenance margin should be set at `6.25%`.
 
-## Are there minimum or maximum leverage as a LA on Matrix?
+## Are there minimum or maximum leverage as a LA on Nibiru?
 
 - There is no minimal leverage, meaning you can come as a LA in the protocol, bring 2 OSMO and open a position of only 0.001 wETH \(thus hedging only that amount\).
 

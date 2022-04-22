@@ -7,17 +7,17 @@ description: Helping the protocol achieve its desired outcome
 ## TL;DR
 
 - Keepers help the protocol perform some tasks which cannot be performed automatically.
-- Matrix needs keepers to arbitrage the stablecoins issued, to maintain the lending strategies, to monitor Hedging Agents' positions, to distribute staking rewards, and to update transaction fees parameters.
+- Nibiru needs keepers to arbitrage the stablecoins issued, to maintain the lending strategies, to monitor Hedging Agents' positions, to distribute staking rewards, and to update transaction fees parameters.
 
 ## Rationale
 
-- Keepers are external incentivized actors that keep the Matrix protocol work smoothly. 
-- Matrix needs multiple types of keepers to get involved. Matrix Core Team developed bots to help keepers achieve some of their operations.
+- Keepers are external incentivized actors that keep the Nibiru protocol work smoothly. 
+- Nibiru needs multiple types of keepers to get involved. Nibiru Core Team developed bots to help keepers achieve some of their operations.
 
 ## Arbitrage Keepers
 
-- Tokens issued by the Matrix protocol will be tradable on exchanges and therefore have a market price. 
-- The Matrix protocol relies on arbitrageurs which will have profitable opportunities whenever the market prices of the tokens deviate from peg.
+- Tokens issued by the Nibiru protocol will be tradable on exchanges and therefore have a market price. 
+- The Nibiru protocol relies on arbitrageurs which will have profitable opportunities whenever the market prices of the tokens deviate from peg.
 
 ## Keepers for Transaction Fees and Slippage
 

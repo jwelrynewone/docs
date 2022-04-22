@@ -1,13 +1,13 @@
 ---
-Matrix Simulator
+Nibiru Simulator
 ---
 
 # Concepts Overview
 
 ## TL;DR
 
-- Matrix involves three different types of agents: Stable-coins minter/redeemer, Leverage agents and Insurance Agents.
-- Matrix can issue multiple stablecoins for different types of whitelisted collateral at 1:1 capital efficiency using front-running resistant Oracle design.
+- Nibiru involves three different types of agents: Stable-coins minter/redeemer, Leverage agents and Insurance Agents.
+- Nibiru can issue multiple stablecoins for different types of whitelisted collateral at 1:1 capital efficiency using front-running resistant Oracle design.
 
 # Problem 1
 
@@ -35,7 +35,7 @@ Matrix Simulator
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Demand creator on the white-listed collateral
 - The LAs and the IAs have to buy the collateral on a dex
-- This makes Matrix Protocol a major demand creator for the collateral token
+- This makes Nibiru Protocol a major demand creator for the collateral token
 - This design should make us the protocol to take leverage 
 
 ## Insurance Fund Bankruptcy problem
@@ -53,22 +53,22 @@ Matrix Simulator
 # Math
 1. Let say the user brings 10000 OSMO to Mint —> USDM 
 2. Current OSMO PRICE = 10
-3. Matrix Protocol Exposure = 100,000 USD 
+3. Nibiru Protocol Exposure = 100,000 USD 
 4. LA bring OSMO worth 10,000 USD and chooses CR (coverage ratio : 100) --> implied leverage = 10
 5. LA would be liquidated in a 10% down move 
-6. Major incentive of the LA to come to the Matrix protocol is —> they can go long a perp with zero funding rate for a long period of time
+6. Major incentive of the LA to come to the Nibiru protocol is —> they can go long a perp with zero funding rate for a long period of time
 
 # Scenario 1 (Market goes up)
 
 1. OSMO goes to 11$
-2. Matrix Expsoure: 110,000 USD, PNL : 10,000 USD
+2. Nibiru Expsoure: 110,000 USD, PNL : 10,000 USD
 3. Whole Pnl of 10,000$ worth OSMO goes to the LA  
 4. If the LA wants to take it out -> fees are decided based on the CR and then send to the IF
 
 # Scenario 2 (Market goes down)
 
 1. OSMO goes to 9$
-2. Matrix Expsoure: 90,000 USD, PNL : -10,000 USD
+2. Nibiru Expsoure: 90,000 USD, PNL : -10,000 USD
 3. LAs OSMO worth of 10,000$ is liquidated 
 4. If the LA wants to take it out -> fees are decided based on the CR and then send to the IF
 

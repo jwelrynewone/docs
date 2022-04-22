@@ -1,24 +1,24 @@
 ---
-Simulate the P&L and the TVL for the Matrix Protocol
+Simulate the P&L and the TVL for the Nibiru Protocol
 ---
 
 # Concepts Overview
 
-## Steps involved in the Matrix Protocol
+## Steps involved in the Nibiru Protocol
 
-- The user deposits OSMO worth 100 USD to the vault of Matrix Protocol. We will use a front-running resistant oracle to calculate the price of OSMO.
-- Matrix Protocol will mint 100 stablecoins (100 USDM). $ value of OSMO = amount of USDM issued to the user.
+- The user deposits OSMO worth 100 USD to the vault of Nibiru Protocol. We will use a front-running resistant oracle to calculate the price of OSMO.
+- Nibiru Protocol will mint 100 stablecoins (100 USDM). $ value of OSMO = amount of USDM issued to the user.
 - Users transact USDM, (transfer, exchange, and store USDM).
-- Matrix Protocol transfers the OSMO to a derivative dex and creates a delta neutral position to hedge.
-- The user deposits 100 USDM to the Matrix Protocol vault for redemption into 100 USD worth of OSMO.
-- The delta neutral position is unwinded at the derivative dex and the OSMO is withdrawn to the Matrix Protocol vault (specific to OSMO). 
-- Matrix Protocol will destroy the USDM when the OSMO will be withdrawn to the user’s wallet.
+- Nibiru Protocol transfers the OSMO to a derivative dex and creates a delta neutral position to hedge.
+- The user deposits 100 USDM to the Nibiru Protocol vault for redemption into 100 USD worth of OSMO.
+- The delta neutral position is unwinded at the derivative dex and the OSMO is withdrawn to the Nibiru Protocol vault (specific to OSMO). 
+- Nibiru Protocol will destroy the USDM when the OSMO will be withdrawn to the user’s wallet.
 - Users will also be able to obtain USDM through DEXes OSMOSIS, and GRAVITY-DEX. Once the USDM is in circulation, it is freely traded.
 
 ## Mechanism for the derivative exchange
 
-- Delta Neutral Position For Matrix Protocol to always be able to issue/redeem USDM at par value, Matrix Protocol will short OSMO/USD perpetual swaps on a derivatives dex(decentralized exchange) to an equivalent amount of the USDM in circulation. 
-- The position will be delta neutral and Matrix Protocol will be protected from price fluctuations of OSMO. 
+- Delta Neutral Position For Nibiru Protocol to always be able to issue/redeem USDM at par value, Nibiru Protocol will short OSMO/USD perpetual swaps on a derivatives dex(decentralized exchange) to an equivalent amount of the USDM in circulation. 
+- The position will be delta neutral and Nibiru Protocol will be protected from price fluctuations of OSMO. 
 
 ## Example 
 - Let’s assume that OSMO is trading at $10,000. A user issues 10,000 UXD in exchange for 1 BTC. 
@@ -47,12 +47,12 @@ Let’s define the USDM value of the insurance fund.
 
 Then,
 - the negative funding rate can be paid out from the insurance fund.
-- Matrix protocol will do an auction of governance tokens(NEO) to the public and replenish the insurance fund until funding rate > 0.
+- Nibiru protocol will do an auction of governance tokens(NEO) to the public and replenish the insurance fund until funding rate > 0.
 - The auction of NEO, there will be a constant positive flow of funds to the insurance fund when the funding rate is positive, since part of the funding rate will go to the insurance fund
 
 ## Protocol Challenges
 
- - Outside of general smart contract risk, there exist a few challenge areas for Matrix protocol to scale efficiently.
+ - Outside of general smart contract risk, there exist a few challenge areas for Nibiru protocol to scale efficiently.
 
 ## Perpetual Market Size 
 - Stablecoin market caps require nearly $1B in market cap to be considered successful and to be considered sufficiently liquid for widespread use. 
@@ -60,9 +60,9 @@ Then,
 - USDM would almost drive the funding rates negative on the exchanges. 
 
 ## Negative Funding Rates 
-- When funding rates on the perpetual exchange turn negative, Matrix protocol pay out. 
+- When funding rates on the perpetual exchange turn negative, Nibiru protocol pay out. 
 - Funding rates are positive in crypto due to larger demand on the long side of assets. 
-- If USDM scales faster than OI on the other exchanges, funding could get driven negative, Matrix protocol would be paying. 
+- If USDM scales faster than OI on the other exchanges, funding could get driven negative, Nibiru protocol would be paying. 
 - To counteract this probability, sufficient funds are stored in the insurance fund to cover negative funding periods. 
 - If the insurance fund is depleted paying funding payments, NEO could be be auctioned off to replenish the insurance fund. 
 - Flash crisis premium would need to be modeled to make sure the funding payments would not be made like regular payments.
@@ -72,7 +72,7 @@ Then,
 - This risk is more prevalent in times of market volatility.
 
 ## Treasury Management 
-- Matrix protocol is designed not to make money from USDM users but in the way it manages its collateral (positive funding rates) and its insurance fund. 
+- Nibiru protocol is designed not to make money from USDM users but in the way it manages its collateral (positive funding rates) and its insurance fund. 
 - As the insurance fund is deployed in asset management strategies, the benefit is clearly the capital appreciation of the fund size. 
 - However, on the flip side there is introduced risk that funds are subjected to which needs to be considered; the fund will be deployed in low-risk strategies with the only notable risk being smart contract risk.
 
