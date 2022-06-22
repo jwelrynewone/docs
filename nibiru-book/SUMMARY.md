@@ -1,26 +1,28 @@
 # Summary
 
-### About
+## Overview
 
-* [What is Nibiru?](README.md)
-* [Whitepaper](litepaper-nibiru.md)
+* [✨ About Nibiru](README.md)
+* [📘 Glossary](GLOSSARY.md)
 
-### Nibiru Stablecoin
 
-* [TODO](stablecoin/README.md)
-* [Directory structure](structure.md)
-* [Pages and Summary](pages.md)
+## Nibiru Protocol
 
-### Nibiru Perpetuals Exchange
+* [‍🤝 Nibi-Perps](perps/README.md)
+* [🏊 Nibi-Swap](amm/README.md)
+* [🔮 Oracle Price Feed](perps/README.md)
+* [💵 NUSD](stablecoin/README.md)
 
-* [TODO](perps/README.md)
+## Developer Docs
 
-### Nibiru AMM
+* [🧠 Module Specifications](pages.md)
+* [⛓️️ Testnet and the `nibid` CLI](pages.md)
+* [⚛️️ Validators](structure.md)
+* [👩‍💻 Smart Contracts Guide](pages.md)
 
-* [TODO](amm/README.md)
+## Learn More
 
-### FAQs
-
-* [Glossary](GLOSSARY.md)
-* [FAQ](faq.md)
+* [📜 Whitepaper](litepaper-nibiru.md)
+* [❓ FAQs](faq.md)
+* [💹 Tokenomics](stablecoin/README.md)
 
