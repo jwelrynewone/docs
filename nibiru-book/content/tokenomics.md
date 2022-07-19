@@ -12,21 +12,17 @@ Nibiru will have a fully diluted token supply of 1.5B tokens. The tokens will be
 
 The token supply is distributed over an 8-year time frame with the following release schedule.
 
-![token_release_area-prod.svg](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/aa93cbb8-501b-47af-968d-722e45bbcd2f/token_release_area-prod.svg)
+![token_release_area-prod.svg](/nibiru-book//img/token_release_area-prod.svg)
 
 As more tokens are released into the ecosystem,  Nibiru will be governed primarily by the community.
 
-![final_token_supply-prod.svg](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/41cc151a-fa3c-4ab0-9c0c-0164106f0796/final_token_supply-prod.svg)
+![final_token_supply-prod.svg](/nibiru-book/img/final_token_supply-prod.svg)
 
 ## Team (17%)
-
----
 
 The team will receive 17% of the total token allocation, with 4.25% available 12 months post genesis and the remaining 12.75%  vesting linearly over the following 36 months.
 
 ## Treasury (4%)
-
----
 
 The treasury will receive 1% of the total token allocation at genesis, and the remaining 3% will vest linearly over 48 months. The token inflation given to the treasury will remain liquid.
 
@@ -34,13 +30,9 @@ The treasury is constructed as a discretionary fund to ensure the stability of t
 
 ## Seed Investors (7%)
 
----
-
 Seed investors who contributed funds to the initial development and launch of Nibiru will receive an allocation of 1.75%  of the total supply 12 months after genesis time with the remaining 5.25% vesting linearly over the following 36 months.
 
 ## Private (12%)
-
----
 
 Investors and strategic partners will receive an allocation of 12% (180M) of the total supply, with 3% (45M) available 12 months after genesis and the remaining 9% (135M) will vest linearly over the following 36 months, at a rate of 3,750,000 NIBI tokens per month. 
 
@@ -51,8 +43,6 @@ Investors will receive liquid rewards while the investors’ allocation is stake
 The proceeds from this sale will be used primarily to fund the Perps Ecosystem Fund.
 
 ## Community (60%)
-
----
 
 ### Validators
 
