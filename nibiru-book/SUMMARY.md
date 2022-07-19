@@ -1,4 +1,4 @@
-# Summary
+# Table of contents
 
 ## Overview
 
@@ -17,7 +17,6 @@
 <!-- * [🧠 Module Specifications](pages.md) -->
 * [⛓️️ Testnet and the `nibid` CLI](cli.md)
 * [⚛️️ Validators](structure.md)
-<!-- * [👩‍💻 Smart Contracts Guide](pages.md) -->
 
 ## Learn More
 

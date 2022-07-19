@@ -1,4 +1,8 @@
-# Pages and Summary
+# 🧠 Module Specifications
+
+
+
+
 
 ### Summary
 
@@ -8,7 +12,7 @@ The format of `SUMMARY.md` is just a list of links. The link's title is used as 
 
 Adding a nested list to a parent chapter will create subchapters.
 
-##### Simple example
+**Simple example**
 
 ```markdown
 # Summary
@@ -23,7 +27,7 @@ Adding a nested list to a parent chapter will create subchapters.
 
 Each chapter has a dedicated page (`part#/README.md`) and is split into subchapters.
 
-##### Anchors
+**Anchors**
 
 Chapters in the Table of Contents can be pointing to specific part of a file using anchor.
 
@@ -40,8 +44,7 @@ Chapters in the Table of Contents can be pointing to specific part of a file usi
     * [Better tools for authors](part2/README.md#tools)
 ```
 
-
-##### Parts
+**Parts**
 
 The Table of Contents can be divided into parts separated by headings or horizontal lines:
 
@@ -71,9 +74,9 @@ Parts are just groups of chapters and do not have dedicated pages, but according
 
 Most of the files for HonKit use the Markdown syntax by default. HonKit infers your pages's structure from it. The syntax used is similar to the [GitHub Flavored Markdown syntax](https://guides.github.com/features/mastering-markdown/). One can also opt for the [AsciiDoc syntax](asciidoc.md).
 
-##### Example of a chapter file
+**Example of a chapter file**
 
-``` markdown
+```markdown
 # Title of the chapter
 
 This is a great introduction.
@@ -85,7 +88,6 @@ Markdown will dictates _most_ of your **book's structure**
 ## Section 2
 
 ...
-
 ```
 
 #### Front Matter
