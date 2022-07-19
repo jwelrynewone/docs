@@ -15,7 +15,7 @@
 ## Developer Docs
 
 * [⛓️️ Testnet and the nibid CLI](developer-docs/testnet-and-the-nibid-cli.md)
-* [⚛️️ Validators](structure.md)
+<!-- * [⚛️️ Validators](developer-docs/validators.md) -->
 
 ## Learn More
 
