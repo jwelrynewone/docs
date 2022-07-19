@@ -1,66 +1,100 @@
-# Directory Structure
+# Running the `nibid` binary
 
-HonKit uses a simple directory structure. All Markdown/Asciidoc files listed in the [SUMMARY](pages.md) will be transformed as HTML. Multi-Lingual books have a slightly [different structure](languages.md).
+As the first step, please check for the correct version of the binary 
 
-A basic HonKit usually looks something like this:
-
-```
-.
-├── book.json
-├── README.md
-├── SUMMARY.md
-├── chapter-1/
-|   ├── README.md
-|   └── something.md
-└── chapter-2/
-    ├── README.md
-    └── something.md
+```bash
+$ nibid version
+v0.9.2
 ```
 
-An overview of what each of these does:
+---
 
-| File | Description |
-| -------- | ----------- |
-| `book.json` | Stores [configuration](config.md) data (__optional__) |
-| `README.md` | Preface / Introduction for your book (**required**) |
-| `SUMMARY.md` | Table of Contents (See [Pages](pages.md)) (__optional__) |
-| `GLOSSARY.md` | Lexicon / List of terms to annotate (See [Glossary](lexicon.md)) (__optional__) |
+**[OPTIONAL]** To run the binary as a background daemon, create a system service
 
-### Static files and Images
+```bash
+$ sudo tee /etc/systemd/system/nibiru.service<<EOF
+[Unit]
+Description=Nibiru Node
+Requires=network-online.target
+After=network-online.target
 
-A static file is a file that is not listed in the `SUMMARY.md`. All static files, unless [ignored](#ignore), are copied to the output.
+[Service]
+Type=exec
+User=<your_user>
+Group=<your_user_group>
+ExecStart=/<path>/<to>/<binary> start --home /home/<your_user>/.nibid
+Restart=on-failure
+ExecReload=/bin/kill -HUP $MAINPID
+KillSignal=SIGTERM
+PermissionsStartOnly=true
+LimitNOFILE=65535
 
-### Ignoring files & folders {#ignore}
+[Install]
+WantedBy=multi-user.target
+EOF
 
-HonKit will read the `.gitignore`, `.bookignore` and `.ignore` files to get a list of files and folders to skip.
-The format inside those files, follows the same convention as `.gitignore`:
-
-```
-# This is a comment
-
-# Ignore the file test.md
-test.md
-
-# Ignore everything in the directory "bin"
-bin/*
-```
-
-### Project integration with subdirectory {#subdirectory}
-
-For software projects, you can use a subdirectory (like `docs/`) to store the book for the project's documentation. You can configure the [`root` option](config.md) to indicate the folder where HonKit can find the book's files:
-
-```
-.
-├── book.json
-└── docs/
-    ├── README.md
-    └── SUMMARY.md
+$ sudo systemctl daemon-reload
+$ sudo systemctl enable nibiru
 ```
 
-With `book.json` containing:
+Otherwise, run the binary manually via the command line
 
+
+#### Create the config folder
+
+```bash
+$ nibid init <moniker-name> --chain-id=nibiru-testnet-2 --home $HOME/.nibid
 ```
-{
-    "root": "./docs"
-}
+
+#### Create a local keypair
+
+```bash
+nibid keys add <key-name> --home $HOME/.nibid
+nibid keys show <key-name> -a --home $HOME/.nibid
+```
+
+This will be your key for signing transactions. Ensure that you keep it secret. Do not share the mnemonic with anyone.
+
+#### Setting the genesis
+
+Copy the provided `genesis.json` file to your chain’s config folder. 
+
+```bash
+$ mv genesis.json $HOME/.nibid/config/genesis.json
+```
+
+#### Setting persistent peers
+
+Update the persistent peers config with the provided `persistent_peers.txt`. This is how your node will know which initial peers to talk to in order to catch up the block history.
+
+```bash
+export PEERS=$(cat persistent_peers.txt| tr '\n' '_' | sed 's/_/,/g;s/,$//;s/^/"/;s/$/"/') && sed -i "s/persistent_peers = \"\"/persistent_peers = ${PEERS}/g" $HOME/.nibid/config/config.toml
+```
+
+---
+
+Run the binary. 
+
+```bash
+$ nibid start --home $HOME/.nibid
+```
+
+If you set up a system daemon above, the command will be:
+
+```bash
+$ sudo systemctl start nibiru
+```
+
+#### Request tokens from the faucet
+
+```bash
+$ curl -X POST -d '{"address": "your address here", "coins": ["10000000unibi"]}' http://ec2-35-172-193-127.compute-1.amazonaws.com:8003
+```
+
+---
+
+Open a position
+
+```bash
+$ nibid tx perp open-position buy uBTC:uNUSD 10 100 0 --from <name> --home $HOME/.nibid
 ```
