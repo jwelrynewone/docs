@@ -17,10 +17,8 @@
 * [⚙️ Building the Nibiru binary](developer-docs/building-the-nibiru-binary.md)
 * [⛓️️ Testnet](developer-docs/testnet.md)
 
-<!-- * [⚛️️ Validators](developer-docs/validators.md) -->
-
 ## Learn More
 
 * [❓ FAQ](learn-more/faq.md)
-* [📘 Glossary](GLOSSARY.md)
 * [💹 Tokenomics](content/tokenomics.md)
+* [📘 Glossary](GLOSSARY.md)
