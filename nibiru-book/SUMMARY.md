@@ -14,7 +14,9 @@
 
 ## Developer Docs
 
-* [⛓️️ Testnet and the nibid CLI](developer-docs/testnet-and-the-nibid-cli.md)
+* [⚙️ Building the Nibiru binary](developer-docs/building-the-nibiru-binary.md)
+* [⛓️️ Testnet](developer-docs/testnet.md)
+
 <!-- * [⚛️️ Validators](developer-docs/validators.md) -->
 
 ## Learn More
