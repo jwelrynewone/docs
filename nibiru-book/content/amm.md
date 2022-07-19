@@ -1,12 +1,16 @@
 ---
-description: Real world examples of content published using HonKit.
+description: Nibi-Swap, Nibiru's Spot DEX. Swap, LP, and earn boosted rewards for longer liquidity locks. 
 ---
 
 # 💧 Nibi-Swap
 
-Separate from Nibiru’s perps product, Nibiru includes a constant-product spot AMM called Nibi-Swap. Pools on Nibi-Swap can include more than two assets with differing token weights. Denoting $\mathcal{W}\_n$ as the normalized weight and $\mathcal{Q}\_n$ as the quantity of asset $n$, each pool has an **invariant $k$** defined by:
+Separate from Nibiru’s perps product, Nibiru includes a constant-product spot AMM called Nibi-Swap. Pools on Nibi-Swap can include more than two assets with differing token weights. Denoting <img style="transform: translateY(0.1em); background: white;" src="svg/buzYCStww2.svg"> $\mathcal{W}\_n$ as the normalized weight and $\mathcal{Q}\_n$ as the quantity of asset $n$, each pool has an **invariant $k$** defined by:
 
-$$\begin{gather} \prod\limits_{n=1}^t \mathcal{Q}_n^{\mathcal{W}_n} = k.  \end{gather}$$​
+<!-- $\mathcal{W}\_n$ --> 
+
+$$
+\prod\limits_{n=1}^t \mathcal{Q}_n^{\mathcal{W}_n} = k.
+$$​
 
 For a given pool, the sum of the normalized weights must equal 1. The invariant $k$ does not change when users swap assets. It only changes when a liquidity provider adds or removes liquidity. Each pool contains $t$ tokens. Thus, the number of trading pairs (combinations of size 2) is
 
