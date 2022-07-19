@@ -2,11 +2,11 @@
 
 This website is a comprehensive guide on understanding Nibiru.
 
-### What is Nibiru Chain?
+### What is Nibiru?
 
 **Nibiru** is a sovereign proof-of-stake blockchain, open-source platform, and member of a family of interconnected blockchains that comprise the Cosmos Ecosystem.  A core blockchain scaling challenge is meeting transaction demand without becoming prohibitively expensive for retail traders. The promise of a multi-chain future has drawn interest towards Cosmos as an infinitely scalable solution to this problem. However, the ecosystem currently lacks tools for investing with complex financial positions. 
 
-Nibiru unifies leveraged derivatives trading, spot trading, staking, and bonded liquidity provision into a seamless user experience. Nibiru enables traders on over 40 blockchains to trade with leverage using a suite of composable decentralized applications:
+Nibiru unifies leveraged derivatives trading, spot trading, staking, and bonded liquidity provision into a seamless user experience, enabling users of over 40 blockchains to trade with leverage using a suite of composable decentralized applications:
 
 1. **Nibi-Perps**:  A perpetual futures exchange where users can take leveraged exposure and trade on a plethora of assets — completely on-chain, completely non-custodially, and with minimal gas fees. 
 2. **Nibi-Swap**: An automated market maker for multichain assets. This application gives users access to swaps, pools, and bonded liquidity gauges.

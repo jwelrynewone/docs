@@ -19,17 +19,15 @@ Created: April 2022
 
 # Introduction
 
-The Cosmos ecosystem's independent, sovereign app-chains require liquidity and diversification of volatility to foster investment into new projects and create ecosystem growth. Nibiru fulfills this gap by giving ecosystem participants access to leverage through the implementation of three initial products:
+The Cosmos ecosystem's independent, sovereign app-chains require liquidity and diversification of volatility to foster investment into new projects and create ecosystem growth. Nibiru fulfills this gap by giving ecosystem participants access to leverage through a suite of composbale, standalone protocols:
 
-1. **Perpetual Futures Exchange**: Perpetual futures are the most popular financial instrument in crypto markets, with the trading volume across major centralized exchanges reaching trillions of notional USD value. Decentralized perps currently represent 2-3% of derivatives volume in comparison with 10-11% DEX to CEX ratio in spot markets[^2].
+1. **Nibi-Perps**:  A perpetual futures exchange where users can take leveraged exposure and trade on a plethora of assets — completely on-chain, completely non-custodially, and with minimal gas fees. 
 
-2. **Decentralized Stablecoin**: NUSD is a fractionally-collateralized algorithmic stablecoin that can support backing by both decentralized collateral as well as algorithmic means (the burning and redeeming of the governance token NIBI).  
-At genesis, NUSD will be 100% collateralized with no algorithmic backing. In the future, provided governance deems it appropriate to instantiate fractional collateralization, the protocol will allow minting NUSD via a dynamic ratio of allow-listed collateral and NIBI.
+2. **Nibi-Swap**: An automated market maker for multichain assets, giving users access to swaps, pools, and bonded liquidity gauges.
 
-3. **Automated Market Maker (AMM)**: A protocol that automates price discovery and enables ecosystem participants to swap tokens, provide liquidity, and bond positions for a.
+3. **Nibiru Stablecoin (NUSD)**: A two-token economic model, where NIBI is the staking and utility token for the protocol and NUSD is a capital-efficient, partially collateralized stablecoin for the protocol.
 
-The rest of the paper is organized detailing the interaction between the
-various products and how they are designed to drive value and utility of
+Nibiru is built with the [Cosmos-SDK](https://github.com/cosmos/cosmos-sdk) and communicates with other chains using the [Inter-Blockchain Communication (IBC)](https://github.com/cosmos/ibc) protocol. As the natural next step, Nibiru will upgrade to allow for CosmWasm smart contract deployment, enabling Nibiru to develop new tools and  evolve alongside the broader community. The rest of the documentation  details the interaction between Nibiru's dapps and how they drive value and utility of
 the NIBI token. 
 
 ### Two-token economic model 
