@@ -9,7 +9,7 @@
 * [🧱 Architecture](content/architecture.md)
 * [🤝 Nibi-Perps](content/perps.md)
 * [💧 Nibi-Swap](content/amm.md)
-* [🔮 Price Feed Oracles](nibiru-protocol/price-feed-oracles.md)
+* [🔮 Price Feed Oracles](content/price-feed-oracles.md)
 * [💵 NUSD Stablecoin](content/stablecoin.md)
 
 ## Developer Docs
