@@ -1,32 +1,23 @@
-# 📘 Glossary
-
-## 📘 Glossary
-
-* [Glossary — General](GLOSSARY.md#glossary--general)
-  * [Block](GLOSSARY.md#block)
-  * [Blockchain](GLOSSARY.md#blockchain)
-  * [Cosmos Hub / Gaia](GLOSSARY.md#cosmos-hub--gaia)
-  * [Cosmos-SDK](GLOSSARY.md#cosmos-sdk)
-  * [Cosmos Ecosystem](GLOSSARY.md#cosmos-ecosystem)
-  * [IBC Relayer](GLOSSARY.md#ibc-relayer)
-  * [Proof of Stake (PoS)](GLOSSARY.md#proof-of-stake-pos)
-  * [Tendermint Consensus](GLOSSARY.md#tendermint-consensus)
-* [Glossary — Nibi-Swap](GLOSSARY.md#glossary--nibi-swap)
-  * [Automated Market-Maker (AMM)](GLOSSARY.md#automated-market-maker-amm)
-  * [Swap](GLOSSARY.md#swap)
-  * [Liquidity](GLOSSARY.md#liquidity)
-  * [Liquidity Provider](GLOSSARY.md#liquidity-provider)
-  * [Total Value Locked (TVL)](GLOSSARY.md#total-value-locked-tvl)
-* [Glossary — Nibi-Perps](GLOSSARY.md#glossary--nibi-perps)
-  * [Perpetual Swap (Contract)](GLOSSARY.md#perpetual-swap-contract)
-  * [Funding Payment](GLOSSARY.md#funding-payment)
-* [Glossary — NUSD Stablecoin](GLOSSARY.md#glossary--nusd-stablecoin)
-  * [NUSD Mint](GLOSSARY.md#nusd-mint)
-  * [NUSD Redeem / Burn](GLOSSARY.md#nusd-redeem--burn)
-  * [Collateral](GLOSSARY.md#collateral)
-  * [Buyback](GLOSSARY.md#buyback)
-  * [Re-collateralize](GLOSSARY.md#re-collateralize)
-* [References](GLOSSARY.md#references)
+# 📘 Glossary             <!-- omit in toc -->
+- [Glossary — General](#glossary--general)
+  - [Block](#block)
+  - [Blockchain](#blockchain)
+  - [Cosmos Hub / Gaia](#cosmos-hub--gaia)
+  - [Cosmos-SDK](#cosmos-sdk)
+  - [Cosmos Ecosystem](#cosmos-ecosystem)
+  - [IBC Relayer](#ibc-relayer)
+  - [Proof of Stake (PoS)](#proof-of-stake-pos)
+  - [Tendermint Consensus](#tendermint-consensus)
+- [Glossary — Nibi-Swap](#glossary--nibi-swap)
+  - [Automated Market-Maker (AMM)](#automated-market-maker-amm)
+  - [Swap](#swap)
+  - [Liquidity](#liquidity)
+  - [Liquidity Provider](#liquidity-provider)
+  - [Total Value Locked (TVL)](#total-value-locked-tvl)
+- [Glossary — Nibi-Perps](#glossary--nibi-perps)
+  - [Perpetual Swap (Contract)](#perpetual-swap-contract)
+  - [Funding Payment](#funding-payment)
+- [References](#references)
 
 ***
 
@@ -100,6 +91,8 @@ Perpetual swap contracts are [swaps](GLOSSARY.md#swap) that allow traders to buy
 
 Funding payments are regularly scheduled payments between longs and shorts on Nibi-Perps. These payments are meant to converge the price between the derivative contract (mark), or perp, and its underlying asset (index). A time-weighted average price from the virtual pool is taken to compute the mark price. The index price is derived from an oracle. Funding payments are calculated and exchanged between traders every half hour on Nibiru.
 
+<!-- Section not necessary for now
+
 ***
 
 ## Glossary — NUSD Stablecoin
@@ -122,7 +115,8 @@ Definition TODO
 
 ### Re-collateralize
 
-Definition TODO
+Definition TODO 
+-->
 
 ***
 
