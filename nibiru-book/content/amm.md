@@ -26,3 +26,35 @@ Formally, the instantaneous spot price that the swap executes at is computed as 
 $$\text{SpotPrice}_{\text{in$\to$ out}} = \frac{(\mathcal{Q}_{in}/\mathcal{W}_{in})}{(\mathcal{Q}_{out}/\mathcal{W}_{out})} \\ \\ \mathcal{B}_i = \text{amount of token in} \\ \mathcal{W}_i = \text{weight of token in} \\ \mathcal{B}_o = \text{amount of token out} \\ \mathcal{W}_i = \text{weight of token out}$$
 
 If liquidity providers don’t modify the asset reserves, then k remains constant and the price changes solely based on trades since the asset weights also remain constant. This ensures that the price of the asset bought increases while the price of the asset sold decreases. The arbitrage opportunities guarantee that the prices offered by the pools move in conjunction with the rest of the market.
+
+## Providing Liquidity 
+
+
+
+## Stableswaps
+
+Given the proliferation of stablecoins about to reach the Cosmos ecosystem, the Nibiru AMM will support stableswap pools based on [Curve’s Stableswap](https://curve.fi/files/stableswap-paper.pdf) invariant. 
+
+$$
+\begin{aligned}
+\text{(constant-price invariant)} \quad& D = \sum_{i=1}^n x_i \quad\quad \\
+\text{(constant-product invariant)} \quad& \prod x_i = \left( \frac{D}{n} \right)^n 
+\end{aligned}
+$$
+
+The stableswap invariant operates like a constant-price curve when a portfolio of assets is balanced and tends toward behaving like a constant-product curve if the tokens lose peg.
+
+$D$ denotes the sum of all token quantities when they have an equal price.  
+
+$$
+\begin{aligned}
+&An^n \sum_{i=1}^n x_i + D = ADn^n + \frac{D^{n+1}}{n^n\prod_{i=1}^n x_i}
+\\
+&A = \text{amplification coefficient} 
+\\
+\end{aligned}
+$$
+
+This operates as the constraint equation when users perform stable-swaps.
+
+<!-- TODO describe n -->

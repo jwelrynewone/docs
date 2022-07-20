@@ -16,11 +16,6 @@ IBC is not reliant on a multi-sig or centralized bridging solution.
 
 Nibiru multi-chain DeFi  
 
-Relayers move packets ... 
-ALthough relayers send information, the both chains validate the status of their counterparty using a light client rather than trusting the relayers. 
-- Forms direct channel between two ledgers is formed
-- Includes mechanism for gracefully dealing with misbehavior.
-
 ## CosmWasm paragraph TODO
 
 permission-less and censorship resistant platform for developers to deploy smart contracts in Go and Rust.
