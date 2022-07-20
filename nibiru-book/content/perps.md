@@ -1,5 +1,7 @@
 # 🤝 Nibi-Perps
 
+![](<../.gitbook/assets/image (1).png>)
+
 Perps are the most popular financial instrument in the modern day crypto markets. Their trading volume across major exchanges reaches trillions of notional USD value each year.
 
 While most perps exchanges are designed with off-chain order books, perp implementations can differ greatly from exchange to exchange. The Nibiru blockchain powers a decentralized and fully on-chain perpetual futures exchange called **NibiPerps**. There are several open problems Nibiru seeks to address with this exchange:
@@ -8,6 +10,10 @@ While most perps exchanges are designed with off-chain order books, perp impleme
 * **Minimize the imbalance in open interest.**
 * **Increase the number of unique traders on the platform.**
 * **Reduce the bleeding of the ecosystem fund**: One of the top priorities on the Nibiru Perps protocol it to keep the funding rates of the listed perps at parity to all other perpetual futures exchanges while monitoring the opportunity for arbitrageurs.
+
+Nibi-Perps is currently on private testnet.  Here's a brief CLI demo.&#x20;
+
+{% embed url="https://youtu.be/k-SBvGdYdng" %}
 
 ## Mark Price and Index Price
 
@@ -149,4 +155,8 @@ Nibiru should never need the Safety Fund, but we include it as an extra precauti
 #### **Treasury**
 
 The protocol Treasury will be the final backstop to minimize drawdown. This is the last fail safe for the protocol. "NIBI printing" is not a stability mechanism for the perps exchange.
+
+
+
+
 
