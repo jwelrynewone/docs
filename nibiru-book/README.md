@@ -1,5 +1,5 @@
 ---
-description: A comprehensive guide on understanding Nibiru.
+description: A comprehensive guide on understanding the Nibiru Ecosystem.
 ---
 
 # ✨ About Nibiru
@@ -14,24 +14,34 @@ Nibiru accurately prices assets using a system of front-run resistant [oracles](
 
 The security of the Nibiru blockchain relies on a set of validators to commit new blocks and participate in Tendermint BFT consensus by brodcasting votes that contain cryptographic signatures signed by each validator's private key. Validators stake **NIBI**, the protocol's native token used for gas, governance, and "mining". Users can delegate NIBI to validators that record and verify transactions in exchange for rewards.
 
-## Applications on Nibiru
+## Nibiru Ecosystem &#x20;
 
-#### 1. Nibi-Perps
+{% content-ref url="content/perps.md" %}
+[perps.md](content/perps.md)
+{% endcontent-ref %}
 
 A perpetual futures exchange where users can take leveraged exposure and trade on a plethora of assets — completely on-chain, completely non-custodially, and with minimal gas fees.
 
-{% embed url="https://www.youtube.com/embed/k-SBvGdYdng" %}
+{% content-ref url="content/amm.md" %}
+[amm.md](content/amm.md)
+{% endcontent-ref %}
 
-#### 2. Nibi-Swap
+**Nibi-Swap** is an automated market maker protocol for multichain assets. This application gives users access to swaps, pools, and bonded liquidity gauges.
 
-An automated market maker for multichain assets. This application gives users access to swaps, pools, and bonded liquidity gauges.
+{% content-ref url="content/stablecoin.md" %}
+[stablecoin.md](content/stablecoin.md)
+{% endcontent-ref %}
 
-#### 3. Nibiru Stablecoin (NUSD)
+Nibiru powers a two-token economic model, where NIBI is the staking and utility token for the protocol and NUSD is a capital-efficient, partially collateralized stablecoin for the protocol.
 
-A two-token economic model, where NIBI is the staking and utility token for the protocol and NUSD is a capital-efficient, partially collateralized stablecoin for the protocol.
+***
 
+![](.gitbook/assets/cosmwasm-ibc-box.svg)
 
----
+* **Inter-Blockchain Communication Protocol (IBC)** enables secure and permissionless transfers of funds between blockchains. Nibiru is IBC compliant at genesis and connected over 40 blockchains. IBC allows cross-chain computation and transfer of arbitrary data. This includes cross-chain smart contract calls, fee payments, NFTs, and fungible token transfers. IBC is not reliant on a multi-sig or centralized bridging solution.
+* **CosmWasm Integration:** Nibiru will also act as a permission-less and censorship resistant platform for developers to deploy smart contracts in Go and Rust.
+
+![](<.gitbook/assets/cosmos-sdk-tendermint-box (1).svg>)
 
 ### [Frequently Asked Questions (FAQ)](learn-more/faq.md)
 

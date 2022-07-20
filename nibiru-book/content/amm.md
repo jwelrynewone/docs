@@ -6,6 +6,8 @@ description: >-
 
 # 💧 Nibi-Swap
 
+![](<../.gitbook/assets/image (2).png>)
+
 Separate from Nibiru’s perps product, Nibiru includes a constant-product spot AMM called Nibi-Swap. Pools on Nibi-Swap can include more than two assets with differing token weights. From the quantity and normalized weight of each asset, we compute an invariant, `k`.
 
 $$

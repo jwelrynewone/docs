@@ -1,5 +1,7 @@
 # 💵 Nibiru Stablecoin - NUSD
 
+![](<../.gitbook/assets/image (3).png>)
+
 Nibiru implements a fractional-algorithmic stablecoin called NUSD. NUSD has an elastic supply that adjusts based on market demand and NIBI helps bolster the stability of NUSD. This gives NUSD a greater capacity to scale through a lower requirement for external collateral.
 
 NUSD’s creation and annihilation mechanism is dependent on the prices obtained from the chain’s price feed. As a result, arbitrage opportunities arise when the price of NUSD falls from its peg given the ability for traders to profit from secondary markets.
