@@ -1,18 +1,8 @@
 # 🧱 Blockchain Architecture
 
-<!-- TODO diagram Tendermint, Cosmos-SDK -->
+TODO diagram IBC, Wasm 
 
-![](img/cosmos-sdk-tendermint-box.svg)
-
-The security of the Nibiru blockchain relies on a set of validators to commit new blocks and participate in Tendermint BFT consensus by brodcasting votes that contain cryptographic signatures signed by each validator's private key. Validators stake **NIBI**, the protocol's native token used for gas, governance, and "mining". Users can delegate NIBI to validators that record and verify transactions in exchange for rewards.
-
-
-<!-- TODO diagram IBC, Wasm -->
-
-<!-- 
-IBC paragrah
-
- -->
+## IBC paragraph TODO
 
 Inter-Blockchain Communication Protocol (IBC) enables secure and permissionless transfers of funds between blockchains. 
 
@@ -31,15 +21,16 @@ ALthough relayers send information, the both chains validate the status of their
 - Forms direct channel between two ledgers is formed
 - Includes mechanism for gracefully dealing with misbehavior.
 
-
-
-<!-- 
-CosmWasm paragraph
- 
-
-  -->
+## CosmWasm paragraph TODO
 
 permission-less and censorship resistant platform for developers to deploy smart contracts in Go and Rust.
 
 CW20 tokens
+
+
+TODO diagram Tendermint, Cosmos-SDK 
+
+![](img/cosmos-sdk-tendermint-box.svg)
+
+The security of the Nibiru blockchain relies on a set of validators to commit new blocks and participate in Tendermint BFT consensus by brodcasting votes that contain cryptographic signatures signed by each validator's private key. Validators stake **NIBI**, the protocol's native token used for gas, governance, and "mining". Users can delegate NIBI to validators that record and verify transactions in exchange for rewards.
 
