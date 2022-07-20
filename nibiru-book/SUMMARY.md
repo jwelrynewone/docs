@@ -10,7 +10,7 @@
 * [🤝 Nibi-Perps](content/perps.md)
 * [💧 Nibi-Swap](content/amm.md)
 * [🔮 Price Feed Oracles](content/price-feed-oracles.md)
-* [💵 NUSD Stablecoin](content/stablecoin.md)
+* [💵 Nibiru Stablecoin - NUSD](content/stablecoin.md)
 
 ## Developer Docs
 
