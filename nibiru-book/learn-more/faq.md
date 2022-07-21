@@ -32,7 +32,7 @@ Nibiru associates closely with transition and diruption of an existing system.
 
 ### What is NIBI token used for?
 
-The security of the Nibiru blockchain relies on a set of validators to commit new blocks and participate in Tendermint BFT consensus by brodcasting votes that contain cryptographic signatures signed by each validator's private key. Validators stake **NIBI**, the protocol's native token used for gas, governance, and "mining". Users can delegate NIBI to validators that record and verify transactions in exchange for rewards.
+The security of the Nibiru blockchain relies on a set of validators to commit new blocks and participate in Tendermint BFT consensus by broadcasting votes that contain cryptographic signatures signed by each validator's private key. Validators stake **NIBI**, the protocol's native token used for gas, governance, and "mining". Users can delegate NIBI to validators that record and verify transactions in exchange for rewards.
 
 ### Where can I buy NIBI and NUSD?
 
@@ -40,11 +40,11 @@ You simply need to have a [Keplr wallet](https://www.keplr.app/) to purchase NIB
 
 ### How is the NUSD supply created?
 
-Users mint NUSD by placing NIBI and any accepted form of collateral (such as USDC) into the system. In return, the protocol mints and gives an equivalent value in NUSD back to the user minus a small transaction fee. Similarly, an NUSD holder can **burn NUSD** in exchange for equivalent value of NIBI and collateral. This process is described in detail on the [Nibiru Stablecoin - NUSD](faq.md) page.
+Users mint NUSD by placing NIBI and any accepted form of collateral (such as USDC) into the system. In return, the protocol mints and gives an equivalent value in NUSD back to the user minus a small transaction fee. Similarly, an NUSD holder can **burn NUSD** in exchange for equivalent value of NIBI and collateral. This process is described in detail on the [Nibiru Stablecoin - NUSD](../content/stablecoin.md) page.
 
 ### What is the release schedule of NIBI?
 
-The token release schedule is described in the [Tokenomics page](content/tokenomics/).
+The token release schedule is described in the [Tokenomics page](../content/tokenomics.md).
 
 ### Where can I go to get other questions answered?
 
@@ -64,4 +64,4 @@ Validators stake NIBI Users can stake without being a validator by delegating NI
 
 ### How can I become a validator?
 
-There are instructions on how to set up various kinds of nodes in the [developer docs](developer-docs/testnet/). Reach out to the team on [Discord](https://discord.gg/cCbfXatEYs) if you need assistance.
+There are instructions on how to set up various kinds of nodes in the [developer docs](broken-reference). Reach out to the team on [Discord](https://discord.gg/cCbfXatEYs) if you need assistance.
