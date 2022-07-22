@@ -120,29 +120,27 @@ Holders who stake their NIBI tokens can vote on or propose new ideas to improve 
 
 ## Perp VIP Trading Program
 
-Holders who stake their NIBI tokens can vote on and/or propose new ideas to develop the perps protocol. 10% of staked NIBI feeds into the ecosystem fund. The NIBI token acts as a backstop mechanism. In the event that Perp EF is unable to cover unexpected losses, the protocol will mint new NIBI tokens, immediately selling the new tokens for collateral to keep the system solvent.
-
-NIBI holders will have the ability to vote on exchange improvements, parameter alterations, new feature implementations, chain updates, and inflationary reward mechanisms. NIBI stakers enjoy a trading fee discount proportional to the amount staked.
+Stakers of NIBI enjoy a trading fee discount proportional to the amount staked. Stakers also have the ability to vote on exchange improvements, parameter alterations, new feature implementations, chain updates, and inflationary reward mechanisms.&#x20;
 
 ## What are the risks? How are they addressed?
 
 Naturally, risks are inherent with any novel project being built. Nibiru’s ecosystem is built to promote the robust decentralization, permissionless creation of perps. As a result, community members can start trading without the supervision of a central authority, meaning the safety of having a facilitating party will not exist to the same degree. That being said, new market proposals will require governance approval for listing and a listing fee in NIBI tokens.
 
-The permissionless state of market creation can drive the protocol to in-solvency in a black swan event. To mitigate against the risk of one market spilling over to others, Nibiru has 3 layers of backstop to account for periods of extreme volatility. In ordered priority, these are the Ecosystem Fund, Safety Module, and the Treasury:
+The permissionless state of market creation can drive the protocol to in-solvency in a black swan event. To mitigate against the risk of one market spilling over to others, Nibiru has **3 layers of backstop** to account for periods of extreme volatility. In ordered priority, these are the **Ecosystem Fund, Safety Module, and the Treasury**:
 
 #### **Ecosystem Fund (EF)**
 
 The EF is is seeded at the genesis within an initial supply from the community token allocation. The EF doesn’t accrue inflation but instead increases its reserves from (1) the collection of transaction fees on perpetual swaps, (2) fees from liquidations, and (3) investment of excess capital deployed on the platform.
+
+{% hint style="info" %}
+You may see the Ecosystem Fund of Nibi-Perps referred to as the `PerpEF` in the technical documentation.
+{% endhint %}
 
 Using these revenue streams, **the EF steps in to pay funding payments to correct the imbalance paid between long and short traders**. If the mark and index prices differ substantially with a large aggregate position size, the EF may pay too much in funding.
 
 And **when liquidations don't occur on time**, positions can end up with bad debt, which is also **covered by the EF**. For market crashes and other high volatility events, Nibiru’s liquidation parameters have been based on a ladder based framework taking into account the idiosyncrasies of each asset on the platform.
 
 For example, if an asset has only a spot DEX and Nibiru as its liquidity venues, then such asset can be extremely volatile, warranting different liquidation parameters (such as lower max leverage). Whereas if the assets are BTC or ETH, which are traded on multiple venues CEX/DEX, then the parameters for liquidation are standardized to Perpetual/Drift protocol.
-
-{% hint style="info" %}
-You may see the Ecosystem Fund of Nibi-Perps referred to as the `PerpEF in the technical documentation.`
-{% endhint %}
 
 #### **Safety Module**
 
