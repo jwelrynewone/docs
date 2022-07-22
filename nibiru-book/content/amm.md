@@ -83,33 +83,29 @@ totalShares=1100, sharesOut=100, Reserves{220 TokenA, 44 TokenB}, k=9,680
 A Cosmos coin, or `sdk.Coin`, defines a token with a denomination and an amount. IBC vouchers, native staking assets, and LP shares are all Cosmos coins. 
 {% endhint %}
 
-<!-- Add liquidity math TODO -->
-
-<!-- LP tokens TODO -->
-
-
 ## Stableswaps
 
 Given the proliferation of stablecoins about to reach the Cosmos ecosystem, the Nibiru AMM will support stableswap pools based on [Curve’s Stableswap](https://curve.fi/files/stableswap-paper.pdf) invariant. 
 
 $$
 \begin{aligned}
-\text{(constant-price invariant)} \quad& D = \sum_{i=1}^n x_i \quad\quad \\
-\text{(constant-product invariant)} \quad& \prod x_i = \left( \frac{D}{n} \right)^n 
+\text{(constant-price invariant)} \quad& D = \sum_{i=1}^t x_i \quad\quad \\
+\text{(constant-product invariant)} \quad& \prod x_i = \left( \frac{D}{t} \right)^t 
 \end{aligned}
 $$
 
 The stableswap invariant operates like a constant-price curve when a portfolio of assets is balanced and tends toward behaving like a constant-product curve if the tokens lose peg.
 
-$D$ denotes the sum of all token quantities when they have an equal price.  
+*D* denotes the sum of all token quantities when they have an equal price.  
 
 $$
 \begin{aligned}
 &A: \text{amplification coefficient}  \\
-&An^n \sum_{i=1}^n x_i + D = ADn^n + \frac{D^{n+1}}{n^n\prod_{i=1}^n x_i} \\
-\end{aligned}
+&\{x_i\}: \text{set of coins} \\
+\end{aligned}\\ 
+At^t \left( \sum_{i=1}^t x_i \right) + D = ADt^t + \frac{D^{t+1}}{t^t\left( \prod\limits_{i=1}^t x_i \right) } 
 $$
 
-This operates as the constraint equation when users perform stable-swaps.
+This operates as the constraint equation when users perform stable-swaps if we solve for *D* given a set of coins and hold this equality.  
 
-<!-- TODO describe n -->
+<!-- TODO amplification coefficient -->

@@ -25,7 +25,7 @@ Perp positions remain effective until either the trader closes their position or
 
 **Position Size**
 
-Suppose a trader wanted exposure to 5 ETH through the purchase of a perpetual contract. On Nibi-Perps, going long on 5 ETH means that the trader buys the ETH perp with a **position size** of 5. Position size is computed as the position notional mutlipled by the mark price of the asset.
+Suppose a trader wanted exposure to 5 ETH through the purchase of a perpetual contract. On Nibi-Perps, going long on 5 ETH means that the trader buys the ETH perp with a **position size** of 5. Position size is computed as the position notional mutliplied by the mark price of the asset.
 
 ```go
 k = baseReserves * quoteReserves
