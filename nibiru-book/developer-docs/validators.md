@@ -1,100 +1,28 @@
-# Running the `nibid` binary
-
-As the first step, please check for the correct version of the binary 
-
-```bash
-$ nibid version
-v0.9.2
-```
-
+---
+description: Instructions on joining the testnet as a validator
 ---
 
-**[OPTIONAL]** To run the binary as a background daemon, create a system service
+# Running a validator
+
+As the first step, please follow the [instructions](testnet.md) to join the testnet.
+
+## Create the validator
+
+Make sure you have the chain synced prior to executing this command.
 
 ```bash
-$ sudo tee /etc/systemd/system/nibiru.service<<EOF
-[Unit]
-Description=Nibiru Node
-Requires=network-online.target
-After=network-online.target
-
-[Service]
-Type=exec
-User=<your_user>
-Group=<your_user_group>
-ExecStart=/<path>/<to>/<binary> start --home /home/<your_user>/.nibid
-Restart=on-failure
-ExecReload=/bin/kill -HUP $MAINPID
-KillSignal=SIGTERM
-PermissionsStartOnly=true
-LimitNOFILE=65535
-
-[Install]
-WantedBy=multi-user.target
-EOF
-
-$ sudo systemctl daemon-reload
-$ sudo systemctl enable nibiru
+nibid tx staking create-validator \
+--amount 10000000unibi \
+--commission-max-change-rate "0.1" \
+--commission-max-rate "0.20" \
+--commission-rate "0.1" \
+--min-self-delegation "1" \
+--details "put your validator description there" \
+--pubkey=$(nibid tendermint show-validator) \
+--moniker <your_moniker> \
+--chain-id nibiru-testnet-3 \
+--gas-prices 0.025unibi \
+--from <key-name>
 ```
 
-Otherwise, run the binary manually via the command line
-
-
-#### Create the config folder
-
-```bash
-$ nibid init <moniker-name> --chain-id=nibiru-testnet-2 --home $HOME/.nibid
-```
-
-#### Create a local keypair
-
-```bash
-nibid keys add <key-name> --home $HOME/.nibid
-nibid keys show <key-name> -a --home $HOME/.nibid
-```
-
-This will be your key for signing transactions. Ensure that you keep it secret. Do not share the mnemonic with anyone.
-
-#### Setting the genesis
-
-Copy the provided `genesis.json` file to your chain’s config folder. 
-
-```bash
-$ mv genesis.json $HOME/.nibid/config/genesis.json
-```
-
-#### Setting persistent peers
-
-Update the persistent peers config with the provided `persistent_peers.txt`. This is how your node will know which initial peers to talk to in order to catch up the block history.
-
-```bash
-export PEERS=$(cat persistent_peers.txt| tr '\n' '_' | sed 's/_/,/g;s/,$//;s/^/"/;s/$/"/') && sed -i "s/persistent_peers = \"\"/persistent_peers = ${PEERS}/g" $HOME/.nibid/config/config.toml
-```
-
----
-
-Run the binary. 
-
-```bash
-$ nibid start --home $HOME/.nibid
-```
-
-If you set up a system daemon above, the command will be:
-
-```bash
-$ sudo systemctl start nibiru
-```
-
-#### Request tokens from the faucet
-
-```bash
-$ curl -X POST -d '{"address": "your address here", "coins": ["10000000unibi"]}' http://ec2-35-172-193-127.compute-1.amazonaws.com:8003
-```
-
----
-
-Open a position
-
-```bash
-$ nibid tx perp open-position buy uBTC:uNUSD 10 100 0 --from <name> --home $HOME/.nibid
-```
+Verify your validator status via the [nibiru-testnet-3 Block Explorer](http://ec2-54-221-169-63.compute-1.amazonaws.com:3003/validators).

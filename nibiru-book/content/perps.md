@@ -2,14 +2,36 @@
 
 ![](<../.gitbook/assets/image (1).png>)
 
+- [🤝 Nibi-Perps](#-nibi-perps)
+  - [Overview](#overview)
+  - [Mark Price and Index Price](#mark-price-and-index-price)
+  - [Leverage and Position Values](#leverage-and-position-values)
+  - [Margin and Margin Ratio](#margin-and-margin-ratio)
+    - [Cross Margin versus Isolated Margin](#cross-margin-versus-isolated-margin)
+  - [Virtual Pools](#virtual-pools)
+    - [Trade Limit Ratio](#trade-limit-ratio)
+    - [Fluctuation Limit Ratio](#fluctuation-limit-ratio)
+    - [Max Oracle Spread Limit Ratio](#max-oracle-spread-limit-ratio)
+  - [Funding Payments](#funding-payments)
+  - [Liquidations](#liquidations)
+  - [Opening Positions](#opening-positions)
+  - [Perp: NIBI Token](#perp-nibi-token)
+  - [Perp VIP Trading Program](#perp-vip-trading-program)
+  - [What are the risks? How are they addressed?](#what-are-the-risks-how-are-they-addressed)
+    - [Ecosystem Fund (EF)](#ecosystem-fund-ef)
+    - [Safety Module](#safety-module)
+    - [Treasury](#treasury)
+
+## Overview
+
 Perps are the most popular financial instrument in the modern day crypto markets. Their trading volume across major exchanges reaches trillions of notional USD value each year.
 
 While most perps exchanges are designed with off-chain order books, perp implementations can differ greatly from exchange to exchange. The Nibiru blockchain powers a decentralized and fully on-chain perpetual futures exchange called **NibiPerps**. There are several open problems Nibiru seeks to address with this exchange:
 
-* **Minimize latency during periods of high volatility.**
-* **Minimize the imbalance in open interest.**
-* **Increase the number of unique traders on the platform.**
-* **Reduce the bleeding of the ecosystem fund**: One of the top priorities on the Nibiru Perps protocol it to keep the funding rates of the listed perps at parity to all other perpetual futures exchanges while monitoring the opportunity for arbitrageurs.
+- **Minimize latency during periods of high volatility.**
+- **Minimize the imbalance in open interest.**
+- **Increase the number of unique traders on the platform.**
+- **Reduce the bleeding of the ecosystem fund**: One of the top priorities on the Nibiru Perps protocol it to keep the funding rates of the listed perps at parity to all other perpetual futures exchanges while monitoring the opportunity for arbitrageurs.
 
 Nibi-Perps is currently on private testnet.  Here's a brief CLI demo.&#x20;
 
@@ -29,7 +51,7 @@ Suppose a trader wanted exposure to 5 ETH through the purchase of a perpetual co
 
 ```go
 k = baseReserves * quoteReserves
-notionalDelta = margin * leverage // (leverage is negative if short)
+notionalDelta = margin * leverage // (notionalDelta is negative if short)
 baseReservesAfterSwap = k / (quoteReserves + notionalDelta)
 position_size = baseReserves - baseReservesAfterSwap
 ```
@@ -51,7 +73,7 @@ Let's say that the mark price of ether is $3000 in our previous example. This im
 
 The margin ratio is defined by:
 
-```
+```go
 marginRatio = (margin + unrealizedPnL) / positionNotional
 ```
 
@@ -59,12 +81,12 @@ Here, `unrealizedPnL` is computed using either the mark price or the 15 minute T
 
 When the virtual price is not within the spread tolerance to the index price, the margin ratio used is the highest value between a calculation with the index price (oracle based on underlying) and the mark price (derivative price).
 
-Another good way to think about margin ratio is as the inverse of a position's effective leverage. I.e. if a trader puts down $100 as margin with 5x leverage, the notional is $500 and the margin ratio is 20%, which is equivalent to `1 / leverage`.
+Another good way to think about margin ratio is as the inverse of a position's effective leverage. I.e. if a trader puts down \$100 as margin with 5x leverage, the notional is \$500 and the margin ratio is 20%, which is equivalent to `1 / leverage`.
 
-#### **Cross Margin versus Isolated Margin**
+### Cross Margin versus Isolated Margin
 
-* In a **cross margin** model, collateral is shared between open positions that use the same settlement currency. All open positions then have a combined margin ratio.
-* With an **isolated margin** model, the margin assigned to each open position is considered a separate collateral account.
+- In a **cross margin** model, collateral is shared between open positions that use the same settlement currency. All open positions then have a combined margin ratio.
+- With an **isolated margin** model, the margin assigned to each open position is considered a separate collateral account.
 
 **Current implementation**: Nibi-Perps uses isolated margin on each trading pair. This means that excess collateral on one position is not affected by a deficit on another (and vice versa). Positions are siloed in terms of liquidation risks, so an underwater ETH:USD position won't have any effect on an open ATOM:USD position, for instance.
 
@@ -72,9 +94,23 @@ In future upgrade, we'd like to implement a cross margin model and allow traders
 
 ## Virtual Pools
 
-Positions on Nibiru Perps are priced using virtual liquidity pools with no real assets stored inside. In this model, assets are priced using the constant product model (`x*y=k`) pioneered by Uniswap. Tokens are sent to a clearing house, which stores the collateral in a vault, and where virtual pools are leveraged for price discovery of the derivatives. This allows for the use of leverage trading and removes the need for liquidity providers, or makers.
+Positions on Nibiru Perps are priced using virtual liquidity pools with no real liquidity stored inside. In this model, assets are priced using the constant product model (`x*y=k`) pioneered by Uniswap. Tokens are sent to a clearing house, which stores the collateral in a vault, and virtual pools are used for price discovery of the derivatives. This allows for the use of leverage trading and removes the need for liquidity providers, or market makers.
 
-Virtual pools enable Nibiru to have **clear pricing rules.** Each futures contract specifies the base asset’s quantity delivered for a single contract. For instance, OSMO/USDC, UMEE/USDC and ATOM/USDC futures contracts represent only one unit of the base assets OSMO, UMEE, and ATOM, similar to spot markets.
+Virtual pools enable Nibiru to have **clear pricing rules.** Each perpetual futures contract specifies the base asset’s quantity delivered for a single contract. For instance, OSMO/USDC, UMEE/USDC and ATOM/USDC futures contracts represent only one unit of the base assets OSMO, UMEE, and ATOM, similar to spot markets.
+
+### Trade Limit Ratio
+
+Every virtual pool has a parameter called the `TradeLimitRatio`, which limits how much of the asset reserves a trader can affect in a single transaction. For example, if a virtual pool had 100 BTC and 2,000,000 NUSD, a `TradeLimitRatio` of `0.1` would only allow the trader to deposit or withdraw up to 10 BTC or 200,000 NUSD. This is done to prevent predatory traders from sending other traders' positions underwater.
+
+### Fluctuation Limit Ratio
+
+Similar to the trade limit ratio, every virtual pool has a parameter called the `FluctuationLimitRatio`. The fluctuation limit ratio limits inter-block fluctuations of the reserve assets. For example, if a virtual pool had 100 BTC and 2,000,000 NUSD at block 1, along with a `FluctuationLimitRatio` of 0.2, then the maximum amount of reserve asset fluctuation that can happen in block 2 is 20 BTC or 400,000 NUSD. This is also to prevent predatory traders from sending other traders' positions underwater.
+
+### Max Oracle Spread Limit Ratio
+
+Every virtual pool has a parameter called the `MaxOracleSpreadLimitRatio`. It comes into effect in extreme market conditions, when the mark (spot) price has deviated from the index (oracle) price by too much. Liquidations will start happening based on the index price instead of the mark price.
+
+For example, let's imagine a virtual pool of BTC/NUSD and a `MaxOracleSpreadLimitRatio` of `0.1`. One day, the mark price and index price are equal to each other at \$1000 (1000 NUSD per BTC). The next day, if the index price stays constant at \$1000, but the mark price moves to 1100 or 900, then the market is deemed volatile and the oracle price is used for determining margin ratio instead (and hence liquidations). This is to protect traders in times of extreme market volatility.
 
 ## Funding Payments
 
@@ -96,7 +132,7 @@ fundingPayment = positionSize * fundingRate
 
 Here, position size refers to amount of base asset represented by the derivative. I.e., a BTC:USD perp with 7 BTC of exposure would have a position size of 7.
 
-### Liquidations
+## Liquidations
 
 When using leverage on positions, traders naturally become exposed to liquidation risks. For example, when the underlying value of a trader’s perp declines, the derivative asset will approach the value of its margin, putting the exchange at risk. To prevent the position from falling below the value of the margin that backs it, the protocol will proactively liquidate the position. Liquidations are triggered by **liquidations bots** that earn a small percentage of the remaining position.
 
@@ -128,7 +164,7 @@ Naturally, risks are inherent with any novel project being built. Nibiru’s eco
 
 The permissionless state of market creation can drive the protocol to in-solvency in a black swan event. To mitigate against the risk of one market spilling over to others, Nibiru has **3 layers of backstop** to account for periods of extreme volatility. In ordered priority, these are the **Ecosystem Fund, Safety Module, and the Treasury**:
 
-#### **Ecosystem Fund (EF)**
+### Ecosystem Fund (EF)
 
 The EF is is seeded at the genesis within an initial supply from the community token allocation. The EF doesn’t accrue inflation but instead increases its reserves from (1) the collection of transaction fees on perpetual swaps, (2) fees from liquidations, and (3) investment of excess capital deployed on the platform.
 
@@ -142,7 +178,7 @@ And **when liquidations don't occur on time**, positions can end up with bad deb
 
 For example, if an asset has only a spot DEX and Nibiru as its liquidity venues, then such asset can be extremely volatile, warranting different liquidation parameters (such as lower max leverage). Whereas if the assets are BTC or ETH, which are traded on multiple venues CEX/DEX, then the parameters for liquidation are standardized to Perpetual/Drift protocol.
 
-#### **Safety Module**
+### Safety Module
 
 The next backstop in the case of insolvency on perpetual positions is the Safety Fund. This is a module account in which users could elect to stake NIBI, risking dilutive events in order to backstop and govern the risk on Nibi-Perps. For certain drawdown ranges, NIBI from the Safety Fund could be slashed from stakers and auctioned off against other assets to lessen the severity of the event. Funds from the module can be if liquidations are not profitable enough or if Nibiru governance deems it necessary.
 
@@ -150,11 +186,6 @@ Staking into the Safety Fund would create an opportunity for NIBI holders to ear
 
 Nibiru should never need the Safety Fund, but we include it as an extra precaution.
 
-#### **Treasury**
+### Treasury
 
 The protocol Treasury will be the final backstop to minimize drawdown. This is the last fail safe for the protocol. "NIBI printing" is not a stability mechanism for the perps exchange.
-
-
-
-
-
