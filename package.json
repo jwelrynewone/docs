@@ -2,56 +2,35 @@
   "name": "honkit-root",
   "scripts": {
     "lint": "eslint .",
-    "build": "lerna run build --ignore \"@example/*\"",
-    "clean": "lerna run clean --ignore \"@example/*\"",
-    "test": "lerna run test --ignore \"@example/*\"",
-    "updateSnapshot": "lerna run updateSnapshot --ignore \"@example/*\"",
-    "prettier": "prettier --write \"**/*.{js,jsx,ts,tsx,css}\"",
-    "versionup": "lerna version --no-push --no-git-tag-version --conventional-commits",
-    "versionup:patch": "lerna version patch --no-push --no-git-tag-version --conventional-commits",
-    "versionup:minor": "lerna version minor --no-push --no-git-tag-version --conventional-commits",
-    "versionup:major": "lerna version major --no-push --no-git-tag-version --conventional-commits",
-    "postversionup": "npm run commit-version",
-    "postversionup:patch": "npm run commit-version",
-    "postversionup:minor": "npm run commit-version",
-    "postversionup:major": "npm run commit-version",
-    "commit-version": "git add . && git commit -m \"chore(release): v`node -p 'require(\"./lerna.json\").version'`\"",
-    "release": "lerna publish from-package",
-    "release-ci": "yarn run build && lerna publish from-package --yes --no-verify-access",
-    "honkit:build": "honkit build",
-    "honkit:serve": "honkit serve"
+    "prettier": "prettier --write \"**/*.{js,jsx,ts,tsx,css}\""
   },
   "private": true,
-  "homepage": "https://github.com/honkit/honkit",
-  "bugs": {
-    "url": "https://github.com/honkit/honkit/issues"
-  },
+  "homepage": "",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/honkit/honkit.git"
+    "url": "git+https://github.com/NibiruChain/docs.git"
   },
   "keywords": [
+    "Nibiru",
+    "Blockchain",
+    "Crypto",
     "Markdown",
     "Book",
-    "HonKit",
     "GitBook"
   ],
   "license": "Apache-2.0",
   "authors": [
-    "azu. <azuciao@gmail.com>"
+    "Unique Divine <realuniquedivine@gmail.com>",
+    "Heisenberg <heisenberg@nibiru.fi>"
   ],
   "workspaces": [
     "packages/*",
-    "packages/@honkit/*",
     "examples/*"
   ],
   "devDependencies": {
     "@types/cheerio": "^0.22.18",
     "@types/jest": "^26.0.0",
     "eslint": "^7.19.0",
-    "honkit": "^3.7.5",
-    "husky": "^4.3.8",
-    "lerna": "^4.0.0",
     "lint-staged": "^10.2.11",
     "prettier": "^2.2.1",
     "ts-jest": "^26.5.0",
@@ -60,7 +39,7 @@
   "prettier": {
     "singleQuote": false,
     "printWidth": 120,
-    "tabWidth": 4
+    "tabWidth": 2
   },
   "husky": {
     "hooks": {
