@@ -8,6 +8,7 @@ You will need NIBI tokens to submit a proposal.
   - [Types of proposals](#types-of-proposals)
     - [Add oracle](#add-oracle)
     - [Create a virtual pool](#create-a-virtual-pool)
+  - [Querying a proposal](#querying-a-proposal)
 
 ## Whitelist an oracle
 
@@ -27,7 +28,7 @@ Nibiru supports all of the base cosmos-sdk proposal types listed [here](https://
 
 ```bash
 # parameters
-nibid tx gov submit-proposal add-oracle proposalFile --deposit deposit [flags]
+nibid tx gov submit-proposal add-oracle [proposal-file] --deposit [deposit] [flags]
 
 # example
 nibid tx gov submit-proposal add-oracle /path/to/proposal.json --deposit 1000unibi --from validator
@@ -68,4 +69,16 @@ A typical create-pool proposal json file contains
     "max_oracle_spread_ratio": "0.1",
     "maintenance_margin_ratio": "0.0625"
 }
+```
+
+## Querying a proposal
+
+One can use the following command to query for proposals:
+
+```bash
+# parameters
+nibid query gov proposal [proposal-id]
+
+# example
+nibid query gov proposal 1
 ```
