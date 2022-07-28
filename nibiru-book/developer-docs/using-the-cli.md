@@ -11,6 +11,11 @@ description: Instructions on installing the nibid binary
     - [Closing a position](#closing-a-position)
     - [Add margin to a position](#add-margin-to-a-position)
     - [Remove margin from a position](#remove-margin-from-a-position)
+    - [Query a position](#query-a-position)
+  - [x/vpool module](#xvpool-module)
+    - [Query vpool reserve assets](#query-vpool-reserve-assets)
+    - [Query all pools](#query-all-pools)
+    - [Query base asset prices](#query-base-asset-prices)
   - [x/dex module](#xdex-module)
     - [Provide liquidity to a pool](#provide-liquidity-to-a-pool)
     - [Withdraw liquidity from a pool](#withdraw-liquidity-from-a-pool)
@@ -59,6 +64,48 @@ nibid tx perp remove-margin pair margin [flags]
 
 # example
 nibid tx perp remove-margin ubtc:unusd 1000000unusd --from addr
+```
+
+### Query a position
+
+```bash
+# parameters
+nibid query perp trader-position traderAddr pair [flags]
+
+# example
+nibid query perp trader-position nibi1zaavvzxez0elundtn32qnk9lkm8kmcsz44g7xl ubtc:unusd --node tcp://localhost:26657
+```
+
+## x/vpool module
+
+### Query vpool reserve assets
+
+```bash
+# parameters
+nibid query vpool reserve-assets pair [flags]
+
+# example
+nibid query vpool reserve-assets ubtc:unusd --node tcp://localhost:26657
+```
+
+### Query all pools
+
+```bash
+# parameters
+nibid query vpool all-pools [flags]
+
+# example
+nibid query vpool all-pools --node tcp://localhost:26657
+```
+
+### Query base asset prices
+
+```bash
+# parameters
+nibid query vpool pair direction baseAmt
+
+# example
+nibid query vpool ubtc:unusd 1 1000000
 ```
 
 ## x/dex module
