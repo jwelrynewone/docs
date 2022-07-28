@@ -4,14 +4,14 @@ description: Instructions on building and installing the nibid binary
 
 # ⚙️ Building the Nibiru Binary from Source
 
-Sections:
+- [⚙️ Building the Nibiru Binary from Source](#️-building-the-nibiru-binary-from-source)
+  - [Install Go](#install-go)
+  - [Install make and gcc](#install-make-and-gcc)
+  - [Build and install the Nibiru binary](#build-and-install-the-nibiru-binary)
+  - [Local development](#local-development)
+    - [Note: Docker Engine](#note-docker-engine)
 
-* [Install Go](building-the-nibiru-binary.md#install-go)
-* [Install make and gcc](building-the-nibiru-binary.md#install-make-and-gcc)
-* [Build and install the Nibiru binary](building-the-nibiru-binary.md#build-and-install-the-nibiru-binary)
-* [Local development](building-the-nibiru-binary.md#local-development)
-
-### Install Go
+## Install Go
 
 The installation process for Go depends on your OS. Nibiru is meant to build with a Unix system such as MacOS, Ubuntu, or WSL. Please install Go v1.18 using the instructions at [go.dev/doc/install](https://go.dev/doc/install). For Ubuntu, you can use:
 
@@ -29,15 +29,15 @@ export GO111MODULE=on
 export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
 ```
 
-### Install make and gcc
+## Install make and gcc
 
-```
+```bash
 sudo apt-get update
 sudo apt-get upgrade
 sudo apt install git build-essential ufw curl jq snapd --yes
 ```
 
-### Build and install the Nibiru binary
+## Build and install the Nibiru binary
 
 Begin by cloning the `nibiru` repo.
 
@@ -60,10 +60,10 @@ Optionally, you can run the all of the tests to make sure everything is working 
 go test ./... -cover 
 ```
 
-### Local development
+## Local development
 
 Lastly, you can run the chain for local development with `make localnet`. After opening another terminal, you'll be able to use the full suite of `nibid` commands.
 
-#### Note: Docker Engine
+### Note: Docker Engine
 
 You'll need Docker to run commands that use external containers like `make proto-gen`. Instructions for installing Docker can be found [here](https://docs.docker.com/engine/install/).
