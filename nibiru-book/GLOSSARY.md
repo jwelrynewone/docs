@@ -1,4 +1,5 @@
 # 📘 Glossary             <!-- omit in toc -->
+
 - [Glossary — General](#glossary--general)
   - [Block](#block)
   - [Blockchain](#blockchain)
@@ -122,4 +123,4 @@ Definition TODO
 
 ## References
 
-* BitMEX. Perpetual Contracts Guide. https://www.bitmex.com/app/perpetualContractsGuide
+- BitMEX. Perpetual Contracts Guide. <https://www.bitmex.com/app/perpetualContractsGuide>
