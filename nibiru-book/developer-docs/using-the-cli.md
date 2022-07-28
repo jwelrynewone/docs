@@ -1,28 +1,27 @@
 ---
-description: Instructions on installing the nibid binary
+description: Usage guide for the CLI
 ---
 
+# Using the CLI                   <!-- omit in toc -->
 
-# Using the CLI
-
-- [Using the CLI](#using-the-cli)
-  - [x/perp module](#xperp-module)
-    - [Opening a position](#opening-a-position)
-    - [Closing a position](#closing-a-position)
-    - [Add margin to a position](#add-margin-to-a-position)
-    - [Remove margin from a position](#remove-margin-from-a-position)
-    - [Query a position](#query-a-position)
-  - [x/vpool module](#xvpool-module)
-    - [Query vpool reserve assets](#query-vpool-reserve-assets)
-    - [Query all pools](#query-all-pools)
-    - [Query base asset prices](#query-base-asset-prices)
-  - [x/dex module](#xdex-module)
-    - [Provide liquidity to a pool](#provide-liquidity-to-a-pool)
-    - [Withdraw liquidity from a pool](#withdraw-liquidity-from-a-pool)
-    - [Swap assets](#swap-assets)
-  - [x/stablecoin module](#xstablecoin-module)
-    - [Mint stablecoin](#mint-stablecoin)
-    - [Burn stablecoin](#burn-stablecoin)
+#### Contents
+- [x/perp module](#xperp-module)
+  - [Opening a position](#opening-a-position)
+  - [Closing a position](#closing-a-position)
+  - [Add margin to a position](#add-margin-to-a-position)
+  - [Remove margin from a position](#remove-margin-from-a-position)
+  - [Query a position](#query-a-position)
+- [x/vpool module](#xvpool-module)
+  - [Query vpool reserve assets](#query-vpool-reserve-assets)
+  - [Query all pools](#query-all-pools)
+  - [Query base asset prices](#query-base-asset-prices)
+- [x/dex module](#xdex-module)
+  - [Provide liquidity to a pool](#provide-liquidity-to-a-pool)
+  - [Withdraw liquidity from a pool](#withdraw-liquidity-from-a-pool)
+  - [Swap assets](#swap-assets)
+- [x/stablecoin module](#xstablecoin-module)
+  - [Mint stablecoin](#mint-stablecoin)
+  - [Burn stablecoin](#burn-stablecoin)
 
 ## x/perp module
 
