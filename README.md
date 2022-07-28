@@ -1,6 +1,6 @@
 # NibiruChain/gitbook-docs              <!-- omit in toc -->
 
-This repository houses the documentation for the Nibiru gitbook. Pushing to the master branch currently deploys here[https://nibiru-3.gitbook.io/nibiru-docs/8SHUbqPdzCKhKDWYDUXy]. To make changes to the site, simply open a PR.
+This repository houses the documentation for the Nibiru gitbook. Pushing to the master branch currently deploys [here](https://nibiru-3.gitbook.io/nibiru-docs/8SHUbqPdzCKhKDWYDUXy). To make changes to the site, simply open a PR.
 
 # ⚙️ — Contribution Guidelines                  <!-- omit in toc -->
 
