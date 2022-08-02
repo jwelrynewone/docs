@@ -3,13 +3,14 @@
 ## Overview
 
 * [✨ About Nibiru](README.md)
-
-## Nibiru Protocol
-
 * [🤝 Nibi-Perps](content/perps.md)
 * [💧 Nibi-Swap](content/amm.md)
 * [🔮 Price Feed Oracles](content/price-feed-oracles.md)
 * [💵 Nibiru Stablecoin - NUSD](content/stablecoin.md)
+
+## Perpetual Swaps Trading
+
+* [Parameters & Fees](perps/parameters.md)
 
 ## Nodes & Validators
 
