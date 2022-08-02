@@ -17,7 +17,7 @@
 * [‍💻 Using the `nibid` CLI](developer-docs/using-the-cli.md)
 * [⛓️️ Testnet](developer-docs/testnet.md)
 
-## Governancea & Voting
+## Governance & Voting
 
 * [⚖️ Submitting Governance Proposals](governance/submitting-proposals.md)
 
