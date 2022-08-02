@@ -6,9 +6,9 @@ You will need NIBI tokens to submit a proposal.
   - [Whitelist an oracle](#whitelist-an-oracle)
   - [Creating a proposal](#creating-a-proposal)
   - [Types of proposals](#types-of-proposals)
-    - [Add oracle](#add-oracle)
-    - [Create a virtual pool](#create-a-virtual-pool)
-  - [Querying a proposal](#querying-a-proposal)
+  - [Add oracle](#add-oracle)
+  - [Create a virtual pool](#create-a-virtual-pool)
+- [Querying a proposal](#querying-a-proposal)
 
 ## Whitelist an oracle
 
@@ -24,7 +24,7 @@ Nibiru supports all of the base cosmos-sdk proposal types listed [here](https://
 
 ## Types of proposals
 
-### Add oracle
+## Add oracle
 
 ```bash
 # parameters
@@ -45,7 +45,7 @@ A typical add-oracle proposal json file contains
 }
 ```
 
-### Create a virtual pool
+## Create a virtual pool
 
 ```bash
 # parameters
@@ -71,7 +71,7 @@ A typical create-pool proposal json file contains
 }
 ```
 
-## Querying a proposal
+# Querying a proposal
 
 One can use the following command to query for proposals:
 
