@@ -4,7 +4,6 @@ description: Usage guide for the CLI
 
 # Using the CLI                   <!-- omit in toc -->
 
-#### Contents
 - [x/perp module](#xperp-module)
   - [Opening a position](#opening-a-position)
   - [Closing a position](#closing-a-position)
