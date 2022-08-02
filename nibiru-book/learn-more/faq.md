@@ -64,4 +64,4 @@ Validators stake NIBI Users can stake without being a validator by delegating NI
 
 ### How can I become a validator?
 
-There are instructions on how to set up various kinds of nodes in the [developer docs](broken-reference). Reach out to the team on [Discord](https://discord.gg/cCbfXatEYs) if you need assistance.
+There are instructions on how to set up various kinds of nodes in the [validator docs](../developer-docs/validators.md). Reach out to the team on [Discord](https://discord.gg/cCbfXatEYs) if you need assistance.
