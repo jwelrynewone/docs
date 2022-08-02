@@ -16,6 +16,9 @@
 * [⚙️ Building the Nibiru binary](developer-docs/building-the-nibiru-binary.md)
 * [‍💻 Using the `nibid` CLI](developer-docs/using-the-cli.md)
 * [⛓️️ Testnet](developer-docs/testnet.md)
+
+## Governancea & Voting
+
 * [⚖️ Submitting Governance Proposals](governance/submitting-proposals.md)
 
 ## Learn More
