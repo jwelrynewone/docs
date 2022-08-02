@@ -11,11 +11,15 @@
 * [🔮 Price Feed Oracles](content/price-feed-oracles.md)
 * [💵 Nibiru Stablecoin - NUSD](content/stablecoin.md)
 
-## Developer Docs
+## Nodes & Validators
 
 * [⚙️ Building the Nibiru binary](developer-docs/building-the-nibiru-binary.md)
 * [‍💻 Using the `nibid` CLI](developer-docs/using-the-cli.md)
 * [⛓️️ Testnet](developer-docs/testnet.md)
+
+## Testnet
+
+* [Testnet Parameters](testnet/parameters.md)
 
 ## Governance & Voting
 
