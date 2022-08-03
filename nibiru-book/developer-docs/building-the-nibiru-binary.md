@@ -45,6 +45,7 @@ Begin by cloning the `nibiru` repo.
 cd $HOME
 git clone https://github.com/NibiruChain/nibiru
 cd nibiru
+git checkout v0.12.0
 make install
 ```
 
