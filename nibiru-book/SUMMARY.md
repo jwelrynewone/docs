@@ -3,7 +3,7 @@
 ## Overview
 
 * [✨ About Nibiru](README.md)
-* [🤝 Nibi-Perps](content/perps.md)
+* [🤝 Nibi-Perps](content/perps-overview.md)
 * [💧 Nibi-Swap](content/amm.md)
 * [🔮 Price Feed Oracles](content/price-feed-oracles.md)
 * [💵 Nibiru Stablecoin - NUSD](content/stablecoin.md)
@@ -16,7 +16,8 @@
 
 * [⚙️ Building the Nibiru binary](developer-docs/building-the-nibiru-binary.md)
 * [‍💻 Using the `nibid` CLI](developer-docs/using-the-cli.md)
-* [⛓️️ Testnet](developer-docs/testnet.md)
+* [⛓️️ Joining Testnet](developer-docs/joining-testnet.md)
+* [Validators](developer-docs/validators.md)
 
 ## Testnet
 
