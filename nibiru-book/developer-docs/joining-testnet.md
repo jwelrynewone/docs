@@ -22,7 +22,7 @@ You can find the table of each Nibiru testnet and its current status below. In o
 
 | Network | Chain ID         | Version | Description                      | Status |
 | ------- | ---------------- | ------- | -------------------------------- | ------ |
-| Testnet | nibiru-testnet-1 | v0.12.0  | Nibiru's default testnet | active |
+| Testnet | nibiru-testnet-1 | v0.12.1  | Nibiru's default testnet | active |
 
 {% hint style="info" %}
 You can see the validator status via the [`nibiru-testnet-1` Block Explorer](https://explorer.testnet-1.nibiru.fi/).
@@ -67,7 +67,7 @@ Please check for the correct version of the binary. If you have not installed `n
 
 ```bash
 nibid version
-v0.12.0
+v0.12.1
 ```
 
 **Then choose systemd or Cosmovisor**
@@ -100,7 +100,7 @@ v0.12.0
    mkdir -p $DAEMON_HOME/cosmovisor/upgrades
    ```
 
-4. Add the genesis version of the binary (currently it is `0.12.0` version). You can verify your binary location with `which nibid` command. For the default location you can use the example below:
+4. Add the genesis version of the binary (currently it is `0.12.1` version). You can verify your binary location with `which nibid` command. For the default location you can use the example below:
 
    ```bash
    cp ~/go/bin/nibid $DAEMON_HOME/cosmovisor/genesis/bin
@@ -190,34 +190,31 @@ v0.12.0
    nibid keys show <key-name> -a
    ```
 
-3. Download genesis file
+3. Copy the genesis file included in the archive received from the Nibiru team to the `$HOME/.nibid/config` folder.
 
    ```bash
-   cd $HOME
-   git clone https://github.com/NibiruChain/Networks
-   cp $HOME/Networks/Testnet/nibiru-testnet-1/genesis.json $HOME/.nibid/config/genesis.json
+   cp genesis.json $HOME/.nibid/config/genesis.json
    ```
 
    **Genesis.json sha256**
 
    ```bash
     shasum -a 256 $HOME/.nibid/config/genesis.json
-    27f5588ef51e8e98e8dedc562b1531762d6fcac84f26e3b45b679ce1cfb70a86  /home/<user>/.nibid/config/genesis.json
+    a41704a1b1210bbccd7bd8620a2e2ac6c87b414d9750e4a3d150bb4c800c2994  /home/<user>/.nibid/config/genesis.json
    ```
 
-   Or copy the genesis file included in the archive received from the Nibiru Team to the `$HOME/.nibid/config` folder
+4. Update persistent peers list in the configuration file `$HOME/.nibid/config/config.toml` with the ones from the persistent_peers.txt.
 
-4. Update persistent peers list in the configuration file $HOME/.nibid/config/config.toml with the ones from the persistent_peers.txt. Navigate to the directory with the `persistent_peers.txt`file you've received from the Nibiru team manually and run
+   Navigate to the directory with the `persistent_peers.txt`file you've received from the Nibiru team manually and run
 
    ```bash
    export PEERS=$(cat persistent_peers.txt| tr '\n' '_' | sed 's/_/,/g;s/,$//;s/^/"/;s/$/"/') && sed -i "s/persistent_peers = \"\"/persistent_peers = ${PEERS}/g" $HOME/.nibid/config/config.toml
    ```
 
-5. Set gas prices
+5. Set minimum gas prices
 
    ```bash
-   sudo nano $HOME/.nibid/config/app.toml
-   # recommended to set to "0.025unibi"
+   sed -i 's/minimum-gas-prices =.*/minimum-gas-prices = "0.025unibi"/g' $HOME/.nibid/config/app.toml
    ```
 
 6. Update block time parameters
@@ -233,7 +230,7 @@ v0.12.0
     sed -i 's/skip_timeout_commit =.*/skip_timeout_commit = false/g' $HOME/.nibid/config/config.toml
    ```
 
-7. Start your node
+7. Start your node (choose one of the options)
 
    ```bash
    # without a daemon
@@ -248,8 +245,6 @@ v0.12.0
    ```
 
 8. Request tokens from the [Web Faucet for nibiru-testnet-1](https://faucet.testnet-1.nibiru.fi/) if required.
-
-   Example:
 
    ```bash
    curl -X POST -d '{"address": "your address here", "coins": ["10000000unibi"]}' https://faucet.testnet-1.nibiru.fi/
@@ -272,7 +267,7 @@ nibid query vpool all-pools
 Open a position.
 
 ```bash
-nibid tx perp open-position buy ubtc:unusd 10 100 0 --from <name> --home $HOME/.nibid
+nibid tx perp open-position buy ubtc:unusd 10 100 0 --from <key> --home $HOME/.nibid
 ```
 
 See [here](using-the-cli.md) for the full list of `nibid` commands.
