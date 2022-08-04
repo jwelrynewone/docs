@@ -19,6 +19,7 @@ Not needed until we open source our code
 * [Validators](developer-docs/validators.md)
 * [Using the `nibid` CLI](developer-docs/using-the-cli.md)
 * [Testnet Parameters](testnet/parameters.md)
+* [Resetting your node](developer-docs/node-reset.md)
 
 ## Perpetual Swaps Trading
 
