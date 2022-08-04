@@ -202,19 +202,12 @@ v0.12.0
 
    ```bash
     shasum -a 256 $HOME/.nibid/config/genesis.json
-    5c881b95bfa735cb3f60513910f9c8035a6888933b4d2cea89fa0ef69351134c  /home/<user>/.nibid/config/genesis.json
+    27f5588ef51e8e98e8dedc562b1531762d6fcac84f26e3b45b679ce1cfb70a86  /home/<user>/.nibid/config/genesis.json
    ```
 
    Or copy the genesis file included in the archive received from the Nibiru Team to the `$HOME/.nibid/config` folder
 
-4. Update persistent peers list in the configuration file $HOME/.nibid/config/config.toml with the ones from the persistent_peers.txt
-
-   ```bash
-   cd $HOME/Networks/Testnet/nibiru-testnet-1
-   export PEERS=$(cat persistent_peers.txt| tr '\n' '_' | sed 's/_/,/g;s/,$//;s/^/"/;s/$/"/') && sed -i "s/persistent_peers = \"\"/persistent_peers = ${PEERS}/g" $HOME/.nibid/config/config.toml
-   ```
-
-   or navigate to the directory with the `persistent_peers.txt`file you've received from the Nibiru team manually and run
+4. Update persistent peers list in the configuration file $HOME/.nibid/config/config.toml with the ones from the persistent_peers.txt. Navigate to the directory with the `persistent_peers.txt`file you've received from the Nibiru team manually and run
 
    ```bash
    export PEERS=$(cat persistent_peers.txt| tr '\n' '_' | sed 's/_/,/g;s/,$//;s/^/"/;s/$/"/') && sed -i "s/persistent_peers = \"\"/persistent_peers = ${PEERS}/g" $HOME/.nibid/config/config.toml
@@ -240,7 +233,19 @@ v0.12.0
     sed -i 's/skip_timeout_commit =.*/skip_timeout_commit = false/g' $HOME/.nibid/config/config.toml
    ```
 
-7. Start your node with  `nibid start` or `sudo systemctl start nibiru` if you've created a service for it or `sudo systemctl start cosmovisor-nibiru` if you've installed cosmovisor for it.
+7. Start your node
+
+   ```bash
+   # without a daemon
+   nibid start
+
+   # with systemd
+   sudo systemctl start nibiru
+
+   # with cosmovisor
+   sudo systemctl start cosmovisor-nibiru
+
+   ```
 
 8. Request tokens from the [Web Faucet for nibiru-testnet-1](https://faucet.testnet-1.nibiru.fi/) if required.
 
