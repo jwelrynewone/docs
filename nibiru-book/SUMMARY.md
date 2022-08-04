@@ -8,20 +8,21 @@
 * [🔮 Price Feed Oracles](content/price-feed-oracles.md)
 * [💵 Nibiru Stablecoin - NUSD](content/stablecoin.md)
 
+## Nodes & Validators
+
+<!--
+Not needed until we open source our code 
+* [⚙️ Building the Nibiru binary](developer-docs/building-the-nibiru-binary.md)
+-->
+
+* [⛓️️ Joining Testnet](developer-docs/joining-testnet.md)
+* [✅ Validators](developer-docs/validators.md)
+* [‍💻 Using the `nibid` CLI](developer-docs/using-the-cli.md)
+* [Testnet Parameters](testnet/parameters.md)
+
 ## Perpetual Swaps Trading
 
 * [Parameters & Fees](perps/parameters.md)
-
-## Nodes & Validators
-
-* [⚙️ Building the Nibiru binary](developer-docs/building-the-nibiru-binary.md)
-* [‍💻 Using the `nibid` CLI](developer-docs/using-the-cli.md)
-* [⛓️️ Joining Testnet](developer-docs/joining-testnet.md)
-* [Validators](developer-docs/validators.md)
-
-## Testnet
-
-* [Testnet Parameters](testnet/parameters.md)
 
 ## Governance & Voting
 
