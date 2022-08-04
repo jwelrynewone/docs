@@ -2,11 +2,11 @@
 
 ## Overview
 
-* [✨ About Nibiru](README.md)
-* [🤝 Nibi-Perps](content/perps-overview.md)
-* [💧 Nibi-Swap](content/amm.md)
-* [🔮 Price Feed Oracles](content/price-feed-oracles.md)
-* [💵 Nibiru Stablecoin - NUSD](content/stablecoin.md)
+* [About Nibiru](README.md)
+* [Nibi-Perps](content/perps-overview.md)
+* [Nibi-Swap](content/amm.md)
+* [Price Feed Oracles](content/price-feed-oracles.md)
+* [Nibiru Stablecoin - NUSD](content/stablecoin.md)
 
 ## Nodes & Validators
 
@@ -15,9 +15,9 @@ Not needed until we open source our code
 * [⚙️ Building the Nibiru binary](developer-docs/building-the-nibiru-binary.md)
 -->
 
-* [⛓️️ Joining Testnet](developer-docs/joining-testnet.md)
-* [✅ Validators](developer-docs/validators.md)
-* [‍💻 Using the `nibid` CLI](developer-docs/using-the-cli.md)
+* [Joining Testnet](developer-docs/joining-testnet.md)
+* [Validators](developer-docs/validators.md)
+* [Using the `nibid` CLI](developer-docs/using-the-cli.md)
 * [Testnet Parameters](testnet/parameters.md)
 
 ## Perpetual Swaps Trading
@@ -30,6 +30,6 @@ Not needed until we open source our code
 
 ## Learn More
 
-* [❓ FAQ](learn-more/faq.md)
-* [💹 Tokenomics](content/tokenomics.md)
-* [📘 Glossary](GLOSSARY.md)
+* [FAQ](learn-more/faq.md)
+* [Tokenomics](content/tokenomics.md)
+* [Glossary](GLOSSARY.md)
