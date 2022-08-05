@@ -100,10 +100,10 @@ nibid query vpool all-pools --node tcp://localhost:26657
 
 ```bash
 # parameters
-nibid query vpool pair direction baseAmt
+nibid query vpool prices pair direction baseAmt
 
 # example
-nibid query vpool ubtc:unusd 1 1000000
+nibid query vpool prices ubtc:unusd 1 1000000
 ```
 
 ## x/dex module
