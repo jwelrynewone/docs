@@ -17,7 +17,7 @@ The security of the Nibiru blockchain relies on a set of validators to commit ne
 ## Nibiru Ecosystem &#x20;
 
 {% content-ref url="content/perps.md" %}
-[perps.md](content/perps.md)
+[perps.md](content/perps-overview.md)
 {% endcontent-ref %}
 
 A perpetual futures exchange where users can take leveraged exposure and trade on a plethora of assets — completely on-chain, completely non-custodially, and with minimal gas fees.
