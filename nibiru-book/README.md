@@ -16,8 +16,8 @@ The security of the Nibiru blockchain relies on a set of validators to commit ne
 
 ## Nibiru Ecosystem &#x20;
 
-{% content-ref url="content/perps.md" %}
-[perps.md](content/perps-overview.md)
+{% content-ref url="content/perps-overview.md" %}
+[perps-overview.md](content/perps-overview.md)
 {% endcontent-ref %}
 
 A perpetual futures exchange where users can take leveraged exposure and trade on a plethora of assets — completely on-chain, completely non-custodially, and with minimal gas fees.
@@ -34,12 +34,17 @@ A perpetual futures exchange where users can take leveraged exposure and trade o
 
 Nibiru powers a two-token economic model, where NIBI is the staking and utility token for the protocol and NUSD is a capital-efficient, partially collateralized stablecoin for the protocol.
 
-***
+---
 
 ![](.gitbook/assets/cosmwasm-ibc-box.svg)
 
-* **Inter-Blockchain Communication Protocol (IBC)** enables secure and permissionless transfers of funds between blockchains. Nibiru is IBC compliant at genesis and connected over 40 blockchains. IBC allows cross-chain computation and transfer of arbitrary data. This includes cross-chain smart contract calls, fee payments, NFTs, and fungible token transfers. IBC is not reliant on a multi-sig or centralized bridging solution.
-* **CosmWasm Integration:** Nibiru will also act as a permission-less and censorship resistant platform for developers to deploy smart contracts in Go and Rust.
+###  CosmWasm Integration 
+
+Nibiru will also act as a permission-less and censorship resistant platform for developers to deploy smart contracts in Go and Rust.
+
+### Inter-Blockchain Communication Protocol (IBC)
+
+Nibiru is IBC compliant at genesis and connected over 40 blockchains. IBC enables secure and permissionless transfers of funds between blockchains in addition to cross-chain computation and transfer of arbitrary data. This includes cross-chain smart contract calls, fee payments, NFTs, and fungible token transfers. IBC is not reliant on a multi-sig or centralized bridging solution.
 
 ![](<.gitbook/assets/cosmos-sdk-tendermint-box (1).svg>)
 
