@@ -25,8 +25,8 @@ Nibiru associates closely with transition and diruption of an existing system.
 
 ### How can I get involved?
 
-* You can try out any of the protocols by following the [testnet instructions](../developer-docs/testnet.md).
-* Coming soon: You can try out any of the protocols through their corresponding web applications at [app.nibiru.fi](https://app.nibiru.fi).&#x20;
+* You can try out any of the protocols by following the [testnet instructions](broken-reference).
+* Coming soon: You can try out any of the protocols through their corresponding web applications at [app.nibiru.fi](https://app.nibiru.fi).
 
 ## ❓ — NIBI FAQ
 
@@ -48,7 +48,7 @@ The token release schedule is described in the [Tokenomics page](../content/toke
 
 ### Where can I go to get other questions answered?
 
-The best place to get questions answered quickly is the [Nibiru Discord](https://discord.gg/cCbfXatEYs). For suggestions, issues, and feature requests on specific applications, the team is also response on GitHub: [github.com/NibiruChain](https://github.com/NibiruChain).&#x20;
+The best place to get questions answered quickly is the [Nibiru Discord](https://discord.gg/cCbfXatEYs). For suggestions, issues, and feature requests on specific applications, the team is also response on GitHub: [github.com/NibiruChain](https://github.com/NibiruChain).
 
 ***
 

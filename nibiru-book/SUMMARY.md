@@ -2,35 +2,27 @@
 
 ## Overview
 
-* [About Nibiru](README.md)
-* [Nibi-Perps](content/perps-overview.md)
-* [Nibi-Swap](content/amm.md)
-* [Price Feed Oracles](content/price-feed-oracles.md)
-* [Nibiru Stablecoin - NUSD](content/stablecoin.md)
+* [✨ About Nibiru](README.md)
+* [🤝 Nibi-Perps](content/perps-overview.md)
+* [💧 Nibi-Swap](content/amm.md)
+* [🔮 Price Feed Oracles](content/price-feed-oracles.md)
+* [💵 Nibiru Stablecoin - NUSD](content/stablecoin.md)
+* [⚖ Governance and NIBI](overview/submitting-proposals.md)
 
 ## Nodes & Validators
 
-<!--
-Not needed until we open source our code 
-* [⚙️ Building the Nibiru binary](developer-docs/building-the-nibiru-binary.md)
--->
+* [Joining Testnet](nodes-and-validators/joining-testnet/README.md)
+  * [Testnet Parameters](nodes-and-validators/joining-testnet/parameters.md)
+* [Validating on Testnet](developer-docs/validators.md)
+* [Resetting a validator node](developer-docs/node-reset.md)
 
-* [Joining Testnet](developer-docs/joining-testnet.md)
-* [Validators](developer-docs/validators.md)
-* [Using the `nibid` CLI](developer-docs/using-the-cli.md)
-* [Testnet Parameters](testnet/parameters.md)
-* [Resetting your node](developer-docs/node-reset.md)
+## Nibid CLI <a href="#cli" id="cli"></a>
 
-## Perpetual Swaps Trading
-
-* [Parameters & Fees](perps/parameters.md)
-
-## Governance & Voting
-
-* [⚖️ Submitting Governance Proposals](governance/submitting-proposals.md)
+* [Using the nibid CLI](cli/using-the-cli.md)
+* [Parameters of Nibi-Perps](cli/parameters.md)
 
 ## Learn More
 
-* [FAQ](learn-more/faq.md)
-* [Tokenomics](content/tokenomics.md)
-* [Glossary](GLOSSARY.md)
+* [❓ FAQ](learn-more/faq.md)
+* [💹 Tokenomics](content/tokenomics.md)
+* [📘 Glossary](GLOSSARY.md)

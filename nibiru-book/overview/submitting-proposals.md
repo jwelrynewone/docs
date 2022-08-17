@@ -1,30 +1,34 @@
-# Submitting Proposals
+---
+description: Nibiru is a decentralized blockchain governed by its community members.
+---
 
-You will need NIBI tokens to submit a proposal.
+# ⚖ Governance and NIBI
 
-- [Submitting Proposals](#submitting-proposals)
-  - [Whitelist an oracle](#whitelist-an-oracle)
-  - [Creating a proposal](#creating-a-proposal)
-  - [Types of proposals](#types-of-proposals)
-  - [Add oracle](#add-oracle)
-  - [Create a virtual pool](#create-a-virtual-pool)
-- [Querying a proposal](#querying-a-proposal)
+## Submitting Proposals
 
-## Whitelist an oracle
+NIBI token is integral to the security and governance of the chain. You will need NIBI tokens to submit a governance proposal.&#x20;
 
-<https://docs.cosmos.network/v0.45/modules/gov/07_client.html#transactions>
+* [Submitting Proposals](submitting-proposals.md#submitting-proposals)
+  * [Whitelist an oracle](submitting-proposals.md#whitelist-an-oracle)
+  * [Creating a proposal](submitting-proposals.md#creating-a-proposal)
+  * [Types of proposals](submitting-proposals.md#types-of-proposals)
+  * [Add oracle](submitting-proposals.md#add-oracle)
+  * [Create a virtual pool](submitting-proposals.md#create-a-virtual-pool)
+* [Querying a proposal](submitting-proposals.md#querying-a-proposal)
 
-## Creating a proposal
+### Creating a proposal
 
 Anybody can submit proposals with a deposit. Once the minimum deposit is reached, proposal enters voting period. Participants can vote on proposals that are in the voting period. Delegators inherit their validator's vote if they don't vote themselves. Users that deposited on proposals can recover their deposits if the proposal was accepted OR if the proposal never entered voting period.
 
-Please refer to the [Cosmos SDK docs](https://docs.cosmos.network/v0.45/modules/gov/07_client.html#submit-proposal) on how to submit proposals.
+Please refer to the [Cosmos SDK docs](https://docs.cosmos.network/v0.45/modules/gov/07\_client.html#submit-proposal) on how to submit proposals.
 
-Nibiru supports all of the base cosmos-sdk proposal types listed [here](https://docs.cosmos.network/v0.45/modules/gov/07_client.html#submit-proposal), as well as additional proposal types outlined below.
+Nibiru supports all of the base Cosmos-sdk proposal types listed [here](https://docs.cosmos.network/v0.45/modules/gov/07\_client.html#submit-proposal), as well as additional proposal types outlined below.
 
-## Types of proposals
+### Types of proposals
 
-## Add oracle
+The
+
+### Whitelisting an oracle address with `add-oracle`
 
 ```bash
 # parameters
@@ -45,7 +49,7 @@ A typical add-oracle proposal json file contains
 }
 ```
 
-## Create a virtual pool
+### Create a virtual pool
 
 ```bash
 # parameters
@@ -55,7 +59,7 @@ nibid tx gov submit-proposal create-pool proposalFile --deposit deposit [flags]
 nibid tx gov submit-proposal create-pool /path/to/proposal.json --deposit 1000unibi --from validator
 ```
 
-A typical create-pool proposal json file contains
+A typical create-pool proposal JSON file contains
 
 ```json
 {
@@ -71,7 +75,7 @@ A typical create-pool proposal json file contains
 }
 ```
 
-# Querying a proposal
+## Querying a proposal
 
 One can use the following command to query for proposals:
 

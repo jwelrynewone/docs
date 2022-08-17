@@ -2,9 +2,9 @@
 description: Instructions on joining the testnet as a validator
 ---
 
-# Running a validator
+# Validating on Testnet
 
-As the first step, please follow the [instructions](joining-testnet.md) to join the testnet.
+As the first step, please follow the [instructions](../nodes-and-validators/joining-testnet/) to join the testnet.
 
 ## Create the validator
 

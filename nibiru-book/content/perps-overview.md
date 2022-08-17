@@ -2,25 +2,25 @@
 
 ![](<../.gitbook/assets/image (1).png>)
 
-- [🤝 Nibi-Perps](#-nibi-perps)
-  - [Overview](#overview)
-  - [Mark Price and Index Price](#mark-price-and-index-price)
-  - [Leverage and Position Values](#leverage-and-position-values)
-  - [Margin and Margin Ratio](#margin-and-margin-ratio)
-    - [Cross Margin versus Isolated Margin](#cross-margin-versus-isolated-margin)
-  - [Virtual Pools](#virtual-pools)
-    - [Trade Limit Ratio](#trade-limit-ratio)
-    - [Fluctuation Limit Ratio](#fluctuation-limit-ratio)
-    - [Max Oracle Spread Limit Ratio](#max-oracle-spread-limit-ratio)
-  - [Funding Payments](#funding-payments)
-  - [Liquidations](#liquidations)
-  - [Opening Positions](#opening-positions)
-  - [Perp: NIBI Token](#perp-nibi-token)
-  - [Perp VIP Trading Program](#perp-vip-trading-program)
-  - [What are the risks? How are they addressed?](#what-are-the-risks-how-are-they-addressed)
-    - [Ecosystem Fund (EF)](#ecosystem-fund-ef)
-    - [Safety Module](#safety-module)
-    - [Treasury](#treasury)
+* [🤝 Nibi-Perps](perps-overview.md#-nibi-perps)
+  * [Overview](perps-overview.md#overview)
+  * [Mark Price and Index Price](perps-overview.md#mark-price-and-index-price)
+  * [Leverage and Position Values](perps-overview.md#leverage-and-position-values)
+  * [Margin and Margin Ratio](perps-overview.md#margin-and-margin-ratio)
+    * [Cross Margin versus Isolated Margin](perps-overview.md#cross-margin-versus-isolated-margin)
+  * [Virtual Pools](perps-overview.md#virtual-pools)
+    * [Trade Limit Ratio](perps-overview.md#trade-limit-ratio)
+    * [Fluctuation Limit Ratio](perps-overview.md#fluctuation-limit-ratio)
+    * [Max Oracle Spread Limit Ratio](perps-overview.md#max-oracle-spread-limit-ratio)
+  * [Funding Payments](perps-overview.md#funding-payments)
+  * [Liquidations](perps-overview.md#liquidations)
+  * [Opening Positions](perps-overview.md#opening-positions)
+  * [Perp: NIBI Token](perps-overview.md#perp-nibi-token)
+  * [Perp VIP Trading Program](perps-overview.md#perp-vip-trading-program)
+  * [What are the risks? How are they addressed?](perps-overview.md#what-are-the-risks-how-are-they-addressed)
+    * [Ecosystem Fund (EF)](perps-overview.md#ecosystem-fund-ef)
+    * [Safety Module](perps-overview.md#safety-module)
+    * [Treasury](perps-overview.md#treasury)
 
 ## Overview
 
@@ -28,12 +28,12 @@ Perps are the most popular financial instrument in the modern day crypto markets
 
 While most perps exchanges are designed with off-chain order books, perp implementations can differ greatly from exchange to exchange. The Nibiru blockchain powers a decentralized and fully on-chain perpetual futures exchange called **NibiPerps**. There are several open problems Nibiru seeks to address with this exchange:
 
-- **Minimize latency during periods of high volatility.**
-- **Minimize the imbalance in open interest.**
-- **Increase the number of unique traders on the platform.**
-- **Reduce the bleeding of the ecosystem fund**: One of the top priorities on the Nibiru Perps protocol it to keep the funding rates of the listed perps at parity to all other perpetual futures exchanges while monitoring the opportunity for arbitrageurs.
+* **Minimize latency during periods of high volatility.**
+* **Minimize the imbalance in open interest.**
+* **Increase the number of unique traders on the platform.**
+* **Reduce the bleeding of the ecosystem fund**: One of the top priorities on the Nibiru Perps protocol it to keep the funding rates of the listed perps at parity to all other perpetual futures exchanges while monitoring the opportunity for arbitrageurs.
 
-Nibi-Perps is currently on private testnet.  Here's a brief CLI demo.&#x20;
+Nibi-Perps is currently on private testnet. Here's a brief CLI demo.
 
 {% embed url="https://youtu.be/k-SBvGdYdng" %}
 
@@ -81,12 +81,12 @@ Here, `unrealizedPnL` is computed using either the mark price or the 15 minute T
 
 When the virtual price is not within the spread tolerance to the index price, the margin ratio used is the highest value between a calculation with the index price (oracle based on underlying) and the mark price (derivative price).
 
-Another good way to think about margin ratio is as the inverse of a position's effective leverage. I.e. if a trader puts down \$100 as margin with 5x leverage, the notional is \$500 and the margin ratio is 20%, which is equivalent to `1 / leverage`.
+Another good way to think about margin ratio is as the inverse of a position's effective leverage. I.e. if a trader puts down $100 as margin with 5x leverage, the notional is $500 and the margin ratio is 20%, which is equivalent to `1 / leverage`.
 
 ### Cross Margin versus Isolated Margin
 
-- In a **cross margin** model, collateral is shared between open positions that use the same settlement currency. All open positions then have a combined margin ratio.
-- With an **isolated margin** model, the margin assigned to each open position is considered a separate collateral account.
+* In a **cross margin** model, collateral is shared between open positions that use the same settlement currency. All open positions then have a combined margin ratio.
+* With an **isolated margin** model, the margin assigned to each open position is considered a separate collateral account.
 
 **Current implementation**: Nibi-Perps uses isolated margin on each trading pair. This means that excess collateral on one position is not affected by a deficit on another (and vice versa). Positions are siloed in terms of liquidation risks, so an underwater ETH:USD position won't have any effect on an open ATOM:USD position, for instance.
 
@@ -110,7 +110,7 @@ Similar to the trade limit ratio, every virtual pool has a parameter called the 
 
 Every virtual pool has a parameter called the `MaxOracleSpreadLimitRatio`. It comes into effect in extreme market conditions, when the mark (spot) price has deviated from the index (oracle) price by too much. Liquidations will start happening based on the index price instead of the mark price.
 
-For example, let's imagine a virtual pool of BTC/NUSD and a `MaxOracleSpreadLimitRatio` of `0.1`. One day, the mark price and index price are equal to each other at \$1000 (1000 NUSD per BTC). The next day, if the index price stays constant at \$1000, but the mark price moves to 1100 or 900, then the market is deemed volatile and the oracle price is used for determining margin ratio instead (and hence liquidations). This is to protect traders in times of extreme market volatility.
+For example, let's imagine a virtual pool of BTC/NUSD and a `MaxOracleSpreadLimitRatio` of `0.1`. One day, the mark price and index price are equal to each other at $1000 (1000 NUSD per BTC). The next day, if the index price stays constant at $1000, but the mark price moves to 1100 or 900, then the market is deemed volatile and the oracle price is used for determining margin ratio and, thus, liquidations. This is to protect traders in times of extreme market volatility.
 
 ## Funding Payments
 
@@ -156,7 +156,7 @@ Holders who stake their NIBI tokens can vote on or propose new ideas to improve 
 
 ## Perp VIP Trading Program
 
-Stakers of NIBI enjoy a trading fee discount proportional to the amount staked. Stakers also have the ability to vote on exchange improvements, parameter alterations, new feature implementations, chain updates, and inflationary reward mechanisms.&#x20;
+Stakers of NIBI enjoy a trading fee discount proportional to the amount staked. Stakers also have the ability to vote on exchange improvements, parameter alterations, new feature implementations, chain updates, and inflationary reward mechanisms.
 
 ## What are the risks? How are they addressed?
 
