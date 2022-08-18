@@ -31,12 +31,12 @@ nibid q vpool reserve-assets ubtc:unusd
 nibid q vpool reserve-assets ueth:unusd
 ```
 
-### `query vpool prices` - Solve xy=k for x (base amount) 
+### `query vpool prices` - Solve xy=k for x (base amount)
 
-A perpetual swap on a virtual pool is just like a swap on Uniswap V2 or SushiSwap. 
+A perpetual swap on a virtual pool is just like a swap on Uniswap V2 or SushiSwap.
 When the trader goes long, she's essentially buying base assets, `x` (selling `y`). Similarly, going short means selling `x`.
 
-The `vpool prices` query returns the amount of `y` (virtual quote) received or required to swap with some amount of `x` (virtual base). 
+The `vpool prices` query returns the amount of `y` (virtual quote) received or required to swap with some amount of `x` (virtual base).
 
 ```sh
 # template 
@@ -47,7 +47,7 @@ nibid q vpool prices [pair] [direction] [base-asset-amount] [flags]
 - `direction`: The direction is an integer representing long (1) or short (0). Note that values greater than 1 will still run. The default `direction` is short if you enter a value an integer greater than 1.
 - `base-asset-amount`: Amount of virtual pool, `x` tokens. These are the derivatives assets meant to track the underlying. In other words, a `ueth` pair uses the price of Ether as its index price.
 
-#### Examples - `q vpool prices`
+#### Examples - `q vpool prices` <!-- omit in toc -->
 
 ```sh
 nibid q vpool prices ubtc:unusd 0 7
@@ -63,7 +63,7 @@ nibid q vpool prices ueth:unusd 1 45
 
 ### `query vpool all-pools` - Fetch all pools and prices
 
-This command doesn't require any arguments. 
+This command doesn't require any arguments.
 
 ```sh
 nibid query vpool all-pools 
@@ -142,7 +142,6 @@ nibid query perp trader-position traderAddr pair [flags]
 # example
 nibid query perp trader-position nibi1zaavvzxez0elundtn32qnk9lkm8kmcsz44g7xl ubtc:unusd --node tcp://localhost:26657
 ```
-
 
 <!--  Commenting out for now - dex, stablecoin
 

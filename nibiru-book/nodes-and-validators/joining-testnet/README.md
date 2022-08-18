@@ -6,14 +6,13 @@ description: >-
 
 # Joining Testnet                               <!-- omit in toc -->
 
-
 You can find a table of each Nibiru testnet and its current status below. In order to join a network, you'll need to use its corresponding version of the binary.
 
 ### Networks
 
 | Network | Chain ID         | Description              | Version | Status |
 | ------- | ---------------- | ------------------------ | ------- | ------ |
-| Testnet | nibiru-testnet-2 | Nibiru's default testnet | v0.13   | Active |
+| Testnet | nibiru-testnet-2 | Nibiru's default testnet | v0.13.0 | Active |
 
 {% hint style="info" %}
 You can see the validator status via the [`nibiru-testnet-2` Block Explorer](https://explorer.testnet-2.nibiru.fi/).
@@ -24,8 +23,6 @@ You can see the validator status via the [`nibiru-testnet-2` Block Explorer](htt
 | Block Time | Unbonding Time | Voting Period |
 | ---------- | -------------- | ------------- |
 | 2 seconds  | 21 days        | 10 hours      |
-
-
 
 **Contents**
 
@@ -42,12 +39,11 @@ You can see the validator status via the [`nibiru-testnet-2` Block Explorer](htt
 
 ## Installation prerequisites and Nibiru binary
 
-
 ### Minimum hardware requirements
 
-* 2CPU
-* 4GB RAM
-* 100GB of disk space (SSD)
+- 2CPU
+- 4GB RAM
+- 100GB of disk space (SSD)
 
 ### Update the system
 
@@ -76,14 +72,14 @@ Please check for the correct version of the binary. If you have not installed `n
 
 ```bash
 nibid version
-v0.12.1
+v0.13.0
 ```
 
 **Then choose systemd or Cosmovisor**
 
 ### Setup Cosmovisor (Option 1, recommended)
 
-1.  Install Cosmovisor
+1. Install Cosmovisor
 
     ```bash
     git clone https://github.com/cosmos/cosmos-sdk
@@ -93,25 +89,29 @@ v0.12.1
     cp cosmovisor/cosmovisor $GOPATH/bin/cosmovisor
     cd $HOME
     ```
-2.  Set up enviromental variables
+
+2. Set up enviromental variables
 
     ```bash
     export DAEMON_NAME=nibid
     export DAEMON_HOME=$HOME/.nibid
     source ~/.profile
     ```
-3.  Create required directories
+
+3. Create required directories
 
     ```bash
     mkdir -p $DAEMON_HOME/cosmovisor/genesis/bin
     mkdir -p $DAEMON_HOME/cosmovisor/upgrades
     ```
-4.  Add the genesis version of the binary (currently it is `v0.13`). You can verify your binary location with `which nibid` command. For the default location you can use the example below:
+
+4. Add the genesis version of the binary (currently it is `v0.13`). You can verify your binary location with `which nibid` command. For the default location you can use the example below:
 
     ```bash
     cp ~/go/bin/nibid $DAEMON_HOME/cosmovisor/genesis/bin
     ```
-5.  Create the service for the Cosmovisor
+
+5. Create the service for the Cosmovisor
 
     ```bash
     sudo tee /etc/systemd/system/cosmovisor-nibiru.service<<EOF
@@ -148,7 +148,7 @@ v0.12.1
 
 ### nibid systemd (Option 2)
 
-1.  Create a service file
+1. Create a service file
 
     ```bash
     sudo tee /etc/systemd/system/nibiru.service<<EOF
@@ -172,7 +172,8 @@ v0.12.1
     WantedBy=multi-user.target
     EOF
     ```
-2.  Enable the service
+
+2. Enable the service
 
     ```bash
     sudo systemctl daemon-reload
@@ -181,19 +182,20 @@ v0.12.1
 
 ### Init the Chain
 
-1.  Init the chain
+1. Init the chain
 
     ```bash
     nibid init <moniker-name> --chain-id=nibiru-testnet-2 --home $HOME/.nibid
     ```
-2.  Create a local key pair
+
+2. Create a local key pair
 
     ```bash
     nibid keys add <key-name>
     nibid keys show <key-name> -a
     ```
 
-3.  Copy the genesis file included in the archive received from the Nibiru team to the `$HOME/.nibid/config` folder.
+3. Copy the genesis file included in the archive received from the Nibiru team to the `$HOME/.nibid/config` folder.
 
     ```bash
     cp genesis.json $HOME/.nibid/config/genesis.json
@@ -203,21 +205,24 @@ v0.12.1
 
     ```bash
      shasum -a 256 $HOME/.nibid/config/genesis.json
-     a41704a1b1210bbccd7bd8620a2e2ac6c87b414d9750e4a3d150bb4c800c2994  /home/<user>/.nibid/config/genesis.json
+     29a2342aeda8e111909b6deee276468b645bf9455e8702a5fe32e719fadb6124  /home/<user>/.nibid/config/genesis.json
     ```
-4.  Update persistent peers list in the configuration file `$HOME/.nibid/config/config.toml` with the ones from the persistent\_peers.txt.
+
+4. Update persistent peers list in the configuration file `$HOME/.nibid/config/config.toml` with the ones from the persistent\_peers.txt.
 
     Navigate to the directory with the `persistent_peers.txt`file you've received from the Nibiru team manually and run
 
     ```bash
     export PEERS=$(cat persistent_peers.txt| tr '\n' '_' | sed 's/_/,/g;s/,$//;s/^/"/;s/$/"/') && sed -i "s/persistent_peers = \"\"/persistent_peers = ${PEERS}/g" $HOME/.nibid/config/config.toml
     ```
-5.  Set minimum gas prices
+
+5. Set minimum gas prices
 
     ```bash
     sed -i 's/minimum-gas-prices =.*/minimum-gas-prices = "0.025unibi"/g' $HOME/.nibid/config/app.toml
     ```
-6.  Update block time parameters
+
+6. Update block time parameters
 
     ```bash
      sed -i 's/timeout_propose =.*/timeout_propose = "100ms"/g' $HOME/.nibid/config/config.toml
@@ -229,7 +234,8 @@ v0.12.1
      sed -i 's/timeout_commit =.*/timeout_commit = "1s"/g' $HOME/.nibid/config/config.toml
      sed -i 's/skip_timeout_commit =.*/skip_timeout_commit = false/g' $HOME/.nibid/config/config.toml
     ```
-7.  Start your node (choose one of the options)
+
+7. Start your node (choose one of the options)
 
     ```bash
     # without a daemon
@@ -241,13 +247,20 @@ v0.12.1
     # with cosmovisor
     sudo systemctl start cosmovisor-nibiru
     ```
-8.  Request tokens from the [Web Faucet for nibiru-testnet-2](https://faucet.testnet-2.nibiru.fi/) if required.
+
+8. Request tokens from the [Web Faucet for nibiru-testnet-2](https://faucet.testnet-2.nibiru.fi/) if required.
 
     ```bash
     curl -X POST -d '{"address": "your address here", "coins": ["10000000unibi"]}' https://faucet.testnet-2.nibiru.fi/
     ```
 
-    Please note, that current Testnet Web Faucet limit is `10000000unibi`.
+    You can also request `unusd`.
+
+    ```bash
+    curl -X POST -d '{"address": "your address here", "coins": ["100000000000unusd"]}' <https://faucet.testnet-2.nibiru.fi/>
+    ```
+
+    Please note, that current Testnet Web Faucet limit is `10000000unibi` and `100000000000unusd`.
 
     You can also use Testnet Discord Faucet in the Nibiru Chain server (#faucet channel).
 
