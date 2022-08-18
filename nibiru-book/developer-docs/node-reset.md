@@ -1,3 +1,7 @@
+---
+description: Instructions for validators to rebuild in the case of a chain reset.
+---
+
 # Resetting a validator node
 
 Any upcoming resets are going to be announced in the Nibiru Chain Discord server (`#testnet` channel).\
@@ -33,4 +37,4 @@ nibid version
 
 ## Recreate the validator
 
-Follow the same steps [from Joining Testnet](../nodes-and-validators/joining-testnet/) again
+Follow the same steps from [Joining Testnet](../nodes-and-validators/joining-testnet/README.md) again.

@@ -4,7 +4,8 @@ description: >-
   separate and distinct from real assets.
 ---
 
-# Joining Testnet
+# Joining Testnet                               <!-- omit in toc -->
+
 
 You can find a table of each Nibiru testnet and its current status below. In order to join a network, you'll need to use its corresponding version of the binary.
 
@@ -12,30 +13,34 @@ You can find a table of each Nibiru testnet and its current status below. In ord
 
 | Network | Chain ID         | Description              | Version | Status |
 | ------- | ---------------- | ------------------------ | ------- | ------ |
-| Testnet | nibiru-testnet-1 | Nibiru's default testnet | v0.12.1 | Active |
+| Testnet | nibiru-testnet-2 | Nibiru's default testnet | v0.13   | Active |
 
 {% hint style="info" %}
-You can see the validator status via the [`nibiru-testnet-1` Block Explorer](https://explorer.testnet-1.nibiru.fi/).
+You can see the validator status via the [`nibiru-testnet-2` Block Explorer](https://explorer.testnet-2.nibiru.fi/).
 {% endhint %}
+
+### Blockchain Parameters
+
+| Block Time | Unbonding Time | Voting Period |
+| ---------- | -------------- | ------------- |
+| 2 seconds  | 21 days        | 10 hours      |
 
 
 
 **Contents**
 
-* [Networks](./#undefined)
-* [Minimum hardware requirements](./#minimum-hardware-requirements)
-* [Install prerequisites and Nibiru binary](./#install-prerequisites-and-nibiru-binary)
-  * [Update the system](./#update-the-system)
-  * [Install prerequisites](./#install-prerequisites)
-  * [Install Golang](./#install-golang)
-  * [Verify nibid version](./#verify-nibid-version)
-  * [Setup Cosmovisor (Option 1, recommended)](./#setup-cosmovisor-option-1-recommended)
-  * [nibid systemd (Option 2)](./#nibid-systemd-option-2)
-  * [Init the Chain](./#init-the-chain)
-* [Some example `nibid` commands](./#some-example-nibid-commands)
+- [Installation prerequisites and Nibiru binary](#installation-prerequisites-and-nibiru-binary)
+  - [Minimum hardware requirements](#minimum-hardware-requirements)
+  - [Update the system](#update-the-system)
+  - [Install prerequisites](#install-prerequisites)
+  - [Install Golang](#install-golang)
+  - [Verify nibid version](#verify-nibid-version)
+  - [Setup Cosmovisor (Option 1, recommended)](#setup-cosmovisor-option-1-recommended)
+  - [nibid systemd (Option 2)](#nibid-systemd-option-2)
+  - [Init the Chain](#init-the-chain)
+- [Some example `nibid` commands](#some-example-nibid-commands)
 
 ## Installation prerequisites and Nibiru binary
-
 
 
 ### Minimum hardware requirements
@@ -101,7 +106,7 @@ v0.12.1
     mkdir -p $DAEMON_HOME/cosmovisor/genesis/bin
     mkdir -p $DAEMON_HOME/cosmovisor/upgrades
     ```
-4.  Add the genesis version of the binary (currently it is `0.12.1` version). You can verify your binary location with `which nibid` command. For the default location you can use the example below:
+4.  Add the genesis version of the binary (currently it is `v0.13`). You can verify your binary location with `which nibid` command. For the default location you can use the example below:
 
     ```bash
     cp ~/go/bin/nibid $DAEMON_HOME/cosmovisor/genesis/bin
@@ -179,7 +184,7 @@ v0.12.1
 1.  Init the chain
 
     ```bash
-    nibid init <moniker-name> --chain-id=nibiru-testnet-1 --home $HOME/.nibid
+    nibid init <moniker-name> --chain-id=nibiru-testnet-2 --home $HOME/.nibid
     ```
 2.  Create a local key pair
 
@@ -187,6 +192,7 @@ v0.12.1
     nibid keys add <key-name>
     nibid keys show <key-name> -a
     ```
+
 3.  Copy the genesis file included in the archive received from the Nibiru team to the `$HOME/.nibid/config` folder.
 
     ```bash
@@ -235,10 +241,10 @@ v0.12.1
     # with cosmovisor
     sudo systemctl start cosmovisor-nibiru
     ```
-8.  Request tokens from the [Web Faucet for nibiru-testnet-1](https://faucet.testnet-1.nibiru.fi/) if required.
+8.  Request tokens from the [Web Faucet for nibiru-testnet-2](https://faucet.testnet-2.nibiru.fi/) if required.
 
     ```bash
-    curl -X POST -d '{"address": "your address here", "coins": ["10000000unibi"]}' https://faucet.testnet-1.nibiru.fi/
+    curl -X POST -d '{"address": "your address here", "coins": ["10000000unibi"]}' https://faucet.testnet-2.nibiru.fi/
     ```
 
     Please note, that current Testnet Web Faucet limit is `10000000unibi`.

@@ -12,7 +12,6 @@
 ## Nodes & Validators
 
 * [Joining Testnet](nodes-and-validators/joining-testnet/README.md)
-  * [Testnet Parameters](nodes-and-validators/joining-testnet/parameters.md)
 * [Validating on Testnet](developer-docs/validators.md)
 * [Resetting a validator node](developer-docs/node-reset.md)
 
