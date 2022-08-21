@@ -3,7 +3,7 @@ description: CLI reference for nibid modules
 # cover: >-
 #   ../../.gitbook/assets/Gitbook Banner large 6 (1) (1) (1) (1) (1) (1) (1)
 #   (7).png
-coverY: 0
+# coverY: 0
 ---
 
 # Module Reference
@@ -12,7 +12,15 @@ coverY: 0
 [bank.md](bank.md)
 {% endcontent-ref %}
 
-{% content-ref url="bank.md" %}
+{% content-ref url="keys.md" %}
+[keys.md](keys.md)
+{% endcontent-ref %}
+
+{% content-ref url="perp.md" %}
+[perp.md](perp.md)
+{% endcontent-ref %}
+
+{% content-ref url="vpool.md" %}
 [vpool.md](vpool.md)
 {% endcontent-ref %}
 
@@ -31,12 +39,6 @@ coverY: 0
 <!-- 
 {% content-ref url="gov.md" %}
 [gov.md](gov.md)
-{% endcontent-ref %}
--->
-
-<!-- 
-{% content-ref url="keys.md" %}
-[keys.md](keys.md)
 {% endcontent-ref %}
 -->
 

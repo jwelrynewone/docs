@@ -1,27 +1,28 @@
 # Table of contents
 
-## Overview
+## Concepts
 
 * [✨ About Nibiru](README.md)
-* [🤝 Nibi-Perps](content/perps-overview.md)
-* [💧 Nibi-Swap](content/amm.md)
-* [🔮 Price Feed Oracles](content/price-feed-oracles.md)
-* [💵 Nibiru Stablecoin - NUSD](content/stablecoin.md)
-* [⚖ Governance and NIBI](overview/submitting-proposals.md)
+* [🤝 Nibi-Perps](concepts/perps-overview.md)
+* [💧 Nibi-Swap](concepts/amm.md)
+* [🔮 Price Feed Oracles](concepts/price-feed-oracles.md)
+* [💵 Nibiru Stablecoin - NUSD](concepts/stablecoin.md)
+* [⚖ Governance and NIBI](concepts/submitting-proposals.md)
 
 ## Tutorials
 
-* [Joining Testnet](nodes-and-validators/joining-testnet/README.md)
-* [For Validators](developer-docs/validators.md)
-* [Resetting a validator node](developer-docs/node-reset.md)
+* [Joining Testnet](tutorials/testnet.md)
+* [For Validators](tutorials/validators.md)
+* [Resetting a validator node](tutorials/node-reset.md)
 
-## Nibid Clients <a href="#cli" id="cli"></a>
+## Nibiru Clients and SDKs <a href="#clients" id="clients"></a>
 
-* [Using the nibid CLI](cli/using-the-cli.md)
-* [Module Reference](cli/modules/README.md)
-  - [bank](cli/modules/bank.md)
-  - [vpool](cli/modules/vpool.md)
-* [Parameters of Nibi-Perps](cli/parameters.md)
+* [Clients](clients/clients-sdks.md)
+* [Module Reference](clients/modules/README.md)
+  - [bank](clients/modules/bank.md)
+  - [keys](clients/modules/keys.md)
+  - [perp](clients/modules/perp.md)
+  - [vpool](clients/modules/vpool.md)
 
 ## Learn More
 

@@ -1,28 +1,120 @@
 ---
-description: Parameters used for testnet
+description: >-
+  The perp module enables leveraged trading via perpetual swaps.
+---
+
+# perp module
+
+## Available Commands
+
+#### Transactions
+
+| Command: `nibid tx perp` | Description |
+| :--- | :--- |
+| [open-position](#nibid-tx-perp-open-position) | Alters the current position on a trading pair.  |
+| [close-position](#nibid-tx-perp-close-position) |   |
+| [add-margin](#nibid-tx-perp-add-margin) |   |
+| [remove-margin](#nibid-tx-perp-remove-margin) |   |
+
+#### Queries
+
+| Command: `nibid query perp` | Description |
+| :--- | :--- |
+| [trader-position](#nibid-query-bank-balances) | Query for account balances by address |
+| [params](#nibid-query-bank-total) | Query the total supply of coins of the chain |
+
+---
+
+### nibid tx perp open-position 
+
+Opening a position
+
+```sh
+nibid tx perp open-position buy|sell pair leverage quoteAmt baseAmtLimit [flags]
+```
+
+```sh
+# example
+nibid tx perp open-position buy ubtc:unusd 10 1000000 0 --from addr
+```
+
+### nibid tx perp close-position
+
+```sh
+nibid tx perp close-position [pair] [flags]
+```
+
+```sh
+# example
+nibid tx perp close-position ubtc:unusd --from addr
+```
+
+### nibid tx perp add-margin
+
+```sh
+nibid tx perp add-margin [pair] [margin] [flags]
+```
+
+```sh
+# example
+nibid tx perp add-margin ubtc:unusd 1000000unusd --from addr
+```
+
+### nibid tx perp remove-margin
+
+```sh
+nibid tx perp remove-margin [pair] [margin] [flags]
+```
+
+```
+# example
+nibid tx perp remove-margin ubtc:unusd 1000000unusd --from addr
+```
+
+### nibid query perp trader-position
+
+```sh
+nibid query perp trader-position [trader] [pair] [flags]
+```
+
+```sh
+# example
+nibid query perp trader-position nibi1zaavvzxez0elundtn32qnk9lkm8kmcsz44g7xl ubtc:unusd --node tcp://localhost:26657
+```
+
+### nibid query perp params
+
+```sh
+nibid query perp params
+```
+
 ---
 
 # Parameters of Nibi-Perps
 
-* [Perpetual Swap Trading](parameters.md#perpetual-swap-trading)
-  * [Overall Parameters](parameters.md#overall-parameters)
-    * [FeePoolFeeRatio](parameters.md#feepoolfeeratio)
-    * [EcosystemFundFeeRatio](parameters.md#ecosystemfundfeeratio)
-    * [LiquidationFeeRatio](parameters.md#liquidationfeeratio)
-    * [PartialLiquidationRatio](parameters.md#partialliquidationratio)
-    * [FundingRateInterval](parameters.md#fundingrateinterval)
-    * [TwapLookbackWindow](parameters.md#twaplookbackwindow)
-  * [Market Specific Parameters](parameters.md#market-specific-parameters)
-    * [TradeLimitRatio](parameters.md#tradelimitratio)
-    * [FluctuationLimitRatio](parameters.md#fluctuationlimitratio)
-    * [MaxOracleSpreadLimitRatio](parameters.md#maxoraclespreadlimitratio)
-    * [MaintenanceMarginRatio](parameters.md#maintenancemarginratio)
+* [Module Parameters](perp.md#module-parameters)
+  * [FeePoolFeeRatio](perp.md#feepoolfeeratio)
+  * [EcosystemFundFeeRatio](perp.md#ecosystemfundfeeratio)
+  * [LiquidationFeeRatio](perp.md#liquidationfeeratio)
+  * [PartialLiquidationRatio](perp.md#partialliquidationratio)
+  * [FundingRateInterval](perp.md#fundingrateinterval)
+  * [TwapLookbackWindow](perp.md#twaplookbackwindow)
+* [Market Specific Parameters](perp.md#market-specific-parameters)
+  * [TradeLimitRatio](perp.md#tradelimitratio)
+  * [FluctuationLimitRatio](perp.md#fluctuationlimitratio)
+  * [MaxOracleSpreadLimitRatio](perp.md#maxoraclespreadlimitratio)
+  * [MaintenanceMarginRatio](perp.md#maintenancemarginratio)
 
-## Module Parameters for `x/perp`
+## Module Parameters 
 
-| FeePoolFeeRatio | EcosystemFundFeeRatio | LiquidationFeeRatio | PartialLiquidationRatio | FundingRateInterval | TwapLookbackWindow |
-| --------------- | --------------------- | ------------------- | ----------------------- | ------------------- | ------------------ |
-| 0.001 (0.1%)    | 0.001 (0.1%)          | 0.025 (2.5%)        | 0.25 (25%)              | 30 minutes          | 900 seconds        |
+| Parameter               |  Value                |
+| ---------------         | --------------------- |
+| FeePoolFeeRatio         | 0.001 (0.1%)          | 
+| EcosystemFundFeeRatio   | 0.001 (0.1%)          | 
+| LiquidationFeeRatio     | 0.025 (2.5%)          |
+| PartialLiquidationRatio | 0.25 (25%)            | 
+| FundingRateInterval     | 30 minutes            |
+| TwapLookbackWindow      | 900 seconds           |
 
 ### FeePoolFeeRatio
 

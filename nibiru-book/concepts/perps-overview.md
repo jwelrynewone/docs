@@ -1,26 +1,28 @@
-# 🤝 Nibi-Perps
+# 🤝 Nibi-Perps               <!-- omit in toc -->
 
 ![](<../.gitbook/assets/image (1).png>)
 
-* [🤝 Nibi-Perps](perps-overview.md#-nibi-perps)
-  * [Overview](perps-overview.md#overview)
-  * [Mark Price and Index Price](perps-overview.md#mark-price-and-index-price)
-  * [Leverage and Position Values](perps-overview.md#leverage-and-position-values)
-  * [Margin and Margin Ratio](perps-overview.md#margin-and-margin-ratio)
-    * [Cross Margin versus Isolated Margin](perps-overview.md#cross-margin-versus-isolated-margin)
-  * [Virtual Pools](perps-overview.md#virtual-pools)
-    * [Trade Limit Ratio](perps-overview.md#trade-limit-ratio)
-    * [Fluctuation Limit Ratio](perps-overview.md#fluctuation-limit-ratio)
-    * [Max Oracle Spread Limit Ratio](perps-overview.md#max-oracle-spread-limit-ratio)
-  * [Funding Payments](perps-overview.md#funding-payments)
-  * [Liquidations](perps-overview.md#liquidations)
-  * [Opening Positions](perps-overview.md#opening-positions)
-  * [Perp: NIBI Token](perps-overview.md#perp-nibi-token)
-  * [Perp VIP Trading Program](perps-overview.md#perp-vip-trading-program)
-  * [What are the risks? How are they addressed?](perps-overview.md#what-are-the-risks-how-are-they-addressed)
-    * [Ecosystem Fund (EF)](perps-overview.md#ecosystem-fund-ef)
-    * [Safety Module](perps-overview.md#safety-module)
-    * [Treasury](perps-overview.md#treasury)
+- [Overview](perps-overview.md#overview)
+- [Mark Price and Index Price](perps-overview.md#mark-price-and-index-price)
+- [Leverage and Position Values](perps-overview.md#leverage-and-position-values)
+- [Margin and Margin Ratio](perps-overview.md#margin-and-margin-ratio)
+  - [Cross Margin versus Isolated Margin](perps-overview.md#cross-margin-versus-isolated-margin)
+- [Virtual Pools](perps-overview.md#virtual-pools)
+- [Market Specific Parameters](perps-overview.md#market-specific-parameters)
+  - [Trade Limit Ratio](perps-overview.md#trade-limit-ratio)
+  - [Fluctuation Limit Ratio](perps-overview.md#fluctuation-limit-ratio)
+  - [Max Oracle Spread Limit Ratio](perps-overview.md#max-oracle-spread-limit-ratio)
+- [Funding Payments](perps-overview.md#funding-payments)
+- [Liquidations](perps-overview.md#liquidations)
+- [Opening Positions](perps-overview.md#opening-positions)
+- [Perp: NIBI Token](perps-overview.md#perp-nibi-token)
+- [Perp VIP Trading Program](perps-overview.md#perp-vip-trading-program)
+- [What are the risks? How are they addressed?](perps-overview.md#what-are-the-risks-how-are-they-addressed)
+  - [Ecosystem Fund (EF)](perps-overview.md#ecosystem-fund-ef)
+  - [Safety Module](perps-overview.md#safety-module)
+  - [Treasury](perps-overview.md#treasury)
+
+---
 
 ## Overview
 
@@ -98,6 +100,12 @@ Positions on Nibiru Perps are priced using virtual liquidity pools with no real 
 
 Virtual pools enable Nibiru to have **clear pricing rules.** Each perpetual futures contract specifies the base asset’s quantity delivered for a single contract. For instance, OSMO/USDC, UMEE/USDC and ATOM/USDC futures contracts represent only one unit of the base assets OSMO, UMEE, and ATOM, similar to spot markets.
 
+## Market Specific Parameters
+
+{% hint style="info" %}
+For the full specification of all parameters involved in Nibi-Perps, see the [`perp` module technical documentation](../cli/modules/perp.md#parameters-of-nibi-perps).
+{% endhint %}
+
 ### Trade Limit Ratio
 
 Every virtual pool has a parameter called the `TradeLimitRatio`, which limits how much of the asset reserves a trader can affect in a single transaction. For example, if a virtual pool had 100 BTC and 2,000,000 NUSD, a `TradeLimitRatio` of `0.1` would only allow the trader to deposit or withdraw up to 10 BTC or 200,000 NUSD. This is done to prevent predatory traders from sending other traders' positions underwater.
@@ -110,7 +118,7 @@ Similar to the trade limit ratio, every virtual pool has a parameter called the 
 
 Every virtual pool has a parameter called the `MaxOracleSpreadLimitRatio`. It comes into effect in extreme market conditions, when the mark (spot) price has deviated from the index (oracle) price by too much. Liquidations will start happening based on the index price instead of the mark price.
 
-For example, let's imagine a virtual pool of BTC/NUSD and a `MaxOracleSpreadLimitRatio` of `0.1`. One day, the mark price and index price are equal to each other at $1000 (1000 NUSD per BTC). The next day, if the index price stays constant at $1000, but the mark price moves to 1100 or 900, then the market is deemed volatile and the oracle price is used for determining margin ratio and, thus, liquidations. This is to protect traders in times of extreme market volatility.
+For example, let's imagine a virtual pool of BTC/NUSD and a `MaxOracleSpreadLimitRatio` of `0.1`. One day, the mark price and index price are equal to each other at \$1000 (1000 NUSD per BTC). The next day, if the index price stays constant at \$1000, but the mark price moves to 1100 or 900, then the oracle price is used for determining margin ratio and, thus, liquidations. This is to protect traders in times of extreme market volatility.
 
 ## Funding Payments
 
