@@ -9,15 +9,18 @@
 * [💵 Nibiru Stablecoin - NUSD](content/stablecoin.md)
 * [⚖ Governance and NIBI](overview/submitting-proposals.md)
 
-## Nodes & Validators
+## Tutorials
 
 * [Joining Testnet](nodes-and-validators/joining-testnet/README.md)
-* [Validating on Testnet](developer-docs/validators.md)
+* [For Validators](developer-docs/validators.md)
 * [Resetting a validator node](developer-docs/node-reset.md)
 
-## Nibid CLI <a href="#cli" id="cli"></a>
+## Nibid Clients <a href="#cli" id="cli"></a>
 
 * [Using the nibid CLI](cli/using-the-cli.md)
+* [Module Reference](cli/modules/README.md)
+  - [bank](cli/modules/bank.md)
+  - [vpool](cli/modules/vpool.md)
 * [Parameters of Nibi-Perps](cli/parameters.md)
 
 ## Learn More
