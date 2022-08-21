@@ -17,22 +17,22 @@ Nibiru accurately prices assets using a native, system of decentralized [oracles
 
 The security of the Nibiru blockchain relies on a set of validators to commit new blocks and participate in Tendermint BFT consensus by brodcasting votes that contain cryptographic signatures signed by each validator's private key. Validators stake **NIBI**, the protocol's native token used for gas, governance, and "mining". Users can delegate NIBI to validators that record and verify transactions in exchange for rewards.
 
-## Nibiru Ecosystem &#x20;
+## Nibiru Ecosystem
 
-{% content-ref url="content/perps-overview.md" %}
-[perps-overview.md](content/perps-overview.md)
+{% content-ref url="concepts/perps-overview.md" %}
+[perps-overview.md](concepts/perps-overview.md)
 {% endcontent-ref %}
 
 A perpetual futures exchange where users can take leveraged exposure and trade on a plethora of assets — completely on-chain, completely non-custodially, and with minimal gas fees.
 
-{% content-ref url="content/amm.md" %}
-[amm.md](content/amm.md)
+{% content-ref url="concepts/amm.md" %}
+[amm.md](concepts/amm.md)
 {% endcontent-ref %}
 
 **Nibi-Swap** is an automated market maker protocol for multichain assets. This application gives users access to swaps, pools, and bonded liquidity gauges.
 
-{% content-ref url="content/stablecoin.md" %}
-[stablecoin.md](content/stablecoin.md)
+{% content-ref url="concepts/stablecoin.md" %}
+[stablecoin.md](concepts/stablecoin.md)
 {% endcontent-ref %}
 
 Nibiru powers a two-token economic model, where NIBI is the staking and utility token for the protocol and NUSD is a capital-efficient, partially collateralized stablecoin for the protocol.
