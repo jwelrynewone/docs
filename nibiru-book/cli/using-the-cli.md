@@ -4,67 +4,79 @@ description: Usage guide for the CLI
 
 # Using the CLI                   <!-- omit in toc -->
 
-- [x/perp module](#xperp-module)
-  - [Opening a position](#opening-a-position)
-  - [Closing a position](#closing-a-position)
-  - [Add margin to a position](#add-margin-to-a-position)
-  - [Remove margin from a position](#remove-margin-from-a-position)
-  - [Query a position](#query-a-position)
+- [perp module](#perp-module)
+  - [nibid tx perp open-position](#nibid-tx-perp-open-position)
+  - [nibid tx perp close-position](#nibid-tx-perp-close-position)
+  - [nibid tx perp add-margin](#nibid-tx-perp-add-margin)
+  - [nibid tx perp remove-margin](#nibid-tx-perp-remove-margin)
+  - [nibid query perp trader-position](#nibid-query-perp-trader-position)
+  - [nibid query perp params](#nibid-query-perp-params)
 
----
 
-## x/perp module
+## perp module
 
-### Opening a position
+### nibid tx perp open-position 
 
-```bash
-# parameters
+Opening a position
+
+```sh
 nibid tx perp open-position buy|sell pair leverage quoteAmt baseAmtLimit [flags]
+```
 
+```sh
 # example
 nibid tx perp open-position buy ubtc:unusd 10 1000000 0 --from addr
 ```
 
-### Closing a position
+### nibid tx perp close-position
 
-```bash
-# parameters
+```sh
 nibid tx perp close-position pair [flags]
+```
 
+```sh
 # example
 nibid tx perp close-position ubtc:unusd --from addr
 ```
 
-### Add margin to a position
+### nibid tx perp add-margin
 
-```bash
-# parameters
+```sh
 nibid tx perp add-margin pair margin [flags]
+```
 
+```sh
 # example
 nibid tx perp add-margin ubtc:unusd 1000000unusd --from addr
 ```
 
-### Remove margin from a position
+### nibid tx perp remove-margin
 
-```bash
-# parameters
+```sh
 nibid tx perp remove-margin pair margin [flags]
+```
 
+```
 # example
 nibid tx perp remove-margin ubtc:unusd 1000000unusd --from addr
 ```
 
-### Query a position
+### nibid query perp trader-position
 
-```bash
-# parameters
+```sh
 nibid query perp trader-position traderAddr pair [flags]
+```
 
+```sh
 # example
 nibid query perp trader-position nibi1zaavvzxez0elundtn32qnk9lkm8kmcsz44g7xl ubtc:unusd --node tcp://localhost:26657
 ```
 
+### nibid query perp params
+
+```sh
+nibid a perp params
+```
 
 <!--  Commenting out for now - dex, stablecoin
 
