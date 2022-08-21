@@ -27,5 +27,5 @@
 ## Learn More
 
 * [❓ FAQ](learn-more/faq.md)
-* [💹 Tokenomics](content/tokenomics.md)
+* [💹 Tokenomics](concepts/tokenomics.md)
 * [📘 Glossary](GLOSSARY.md)
