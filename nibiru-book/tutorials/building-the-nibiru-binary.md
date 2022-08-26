@@ -55,7 +55,7 @@ Running these commands should have made `nibid` available in your `$PATH`. You s
 nibid [command]
 ```
 
-Optionally, you can run the all of the tests to make sure everything is working properly.
+Optionally, you can run the Go tests to make sure everything is working properly.
 
 ```bash
 go test ./... -cover 

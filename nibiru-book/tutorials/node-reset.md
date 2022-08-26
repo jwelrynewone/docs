@@ -37,4 +37,4 @@ nibid version
 
 ## Recreate the validator
 
-Follow the same steps from [Joining Testnet](../nodes-and-validators/joining-testnet/README.md) again.
+Follow the same steps from ["Validating on Testnet"](./validators.md) again.

@@ -12,10 +12,11 @@ You can find a table of each Nibiru testnet and its current status below. In ord
 
 | Network | Chain ID         | Description              | Version | Status |
 | ------- | ---------------- | ------------------------ | ------- | ------ |
-| Testnet | nibiru-testnet-2 | Nibiru's default testnet | v0.13.0 | Active |
+| Testnet | nibiru-testnet-3 | Nibiru's default testnet | v0.13.0 | Active |
 
 {% hint style="info" %}
-You can see the validator status via the [`nibiru-testnet-2` Block Explorer](https://explorer.testnet-2.nibiru.fi/).
+You can see current status of the blockchain at the [Nibiru Block Explorer](https://explorer.testnet.nibiru.fi/).
+The explorer allows you to search through transactions, blocks, wallet addresses, and other on-chain data.
 {% endhint %}
 
 ### Blockchain Parameters
@@ -64,11 +65,13 @@ sudo apt install git build-essential ufw curl jq snapd make gcc --yes
 wget -q -O - https://git.io/vQhTU | bash -s -- --version 1.18
 ```
 
+The official installation instructions can be found at [go.dev/docs/install](https://go.dev/doc/install).
+
 After the installation open a new terminal to properly load go or run `source $HOME/.bashrc`
 
 ### Verify nibid version
 
-Please check for the correct version of the binary. If you have not installed `nibid`, please start with the instructions on [building the Nibiru binary](../../developer-docs/developer-docs/building-the-nibiru-binary.md) or extract the archive received from the Nibiru team.
+Please check for the correct version of the binary. If you have not installed `nibid`, please start with the instructions on [building the Nibiru binary](./building-the-nibiru-binary.md) or extract the archive received from the Nibiru team.
 
 ```bash
 nibid version
@@ -185,7 +188,7 @@ v0.13.0
 1. Init the chain
 
     ```bash
-    nibid init <moniker-name> --chain-id=nibiru-testnet-2 --home $HOME/.nibid
+    nibid init <moniker-name> --chain-id=nibiru-testnet-3 --home $HOME/.nibid
     ```
 
 2. Create a local key pair
@@ -248,21 +251,21 @@ v0.13.0
     sudo systemctl start cosmovisor-nibiru
     ```
 
-8. Request tokens from the [Web Faucet for nibiru-testnet-2](https://faucet.testnet-2.nibiru.fi/) if required.
+8. Request tokens from the [Web Faucet for nibiru-testnet-3](https://faucet.testnet-3.nibiru.fi/) if required.
 
     ```bash
-    curl -X POST -d '{"address": "your address here", "coins": ["10000000unibi"]}' https://faucet.testnet-2.nibiru.fi/
+    curl -X POST -d '{"address": "your address here", "coins": ["10000000unibi"]}' https://faucet.testnet-3.nibiru.fi/
     ```
 
     You can also request `unusd`.
 
     ```bash
-    curl -X POST -d '{"address": "your address here", "coins": ["100000000000unusd"]}' <https://faucet.testnet-2.nibiru.fi/>
+    curl -X POST -d '{"address": "your address here", "coins": ["100000000000unusd"]}' <https://faucet.testnet-3.nibiru.fi/>
     ```
 
     Please note, that current Testnet Web Faucet limit is `10000000unibi` and `100000000000unusd`.
 
-    You can also use Testnet Discord Faucet in the Nibiru Chain server (#faucet channel).
+    You can also use the testnet Faucet from the #faucet channel of the [Nibiru Chain Discord](https://discord.gg/sgPw8ZYfpQ).
 
 See the [validator docs](../../developer-docs/validators.md) on how to participate as a validator.
 
