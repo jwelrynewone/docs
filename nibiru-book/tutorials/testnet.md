@@ -208,7 +208,7 @@ v0.13.0
 
     ```bash
      shasum -a 256 $HOME/.nibid/config/genesis.json
-     29a2342aeda8e111909b6deee276468b645bf9455e8702a5fe32e719fadb6124  /home/<user>/.nibid/config/genesis.json
+     94fbd99543f4b7da14f292ea1c61b21ba753e3a84cca64454b8c2fd2d209e6de /home/<user>/.nibid/config/genesis.json
     ```
 
 4. Update persistent peers list in the configuration file `$HOME/.nibid/config/config.toml` with the ones from the persistent\_peers.txt.
@@ -267,7 +267,7 @@ v0.13.0
 
     You can also use the testnet Faucet from the #faucet channel of the [Nibiru Chain Discord](https://discord.gg/sgPw8ZYfpQ).
 
-See the [validator docs](../../developer-docs/validators.md) on how to participate as a validator.
+See the [validator docs](validators.md) on how to participate as a validator.
 
 ## Some example `nibid` commands
 
@@ -286,4 +286,4 @@ nibid tx perp open-position buy|sell pair leverage quoteAmt baseAmtLimit [flags]
 nibid tx perp open-position buy ubtc:unusd 10 100 0 --from <key> --home $HOME/.nibid
 ```
 
-See the [`nibid` CLI guide](../../cli/using-the-cli.md) for the full list of `nibid` commands.
+See the [`nibid` CLI guide](../clients/modules/README.md) for the full list of `nibid` commands.
