@@ -13,7 +13,7 @@
 
 * [Joining Testnet](tutorials/testnet.md)
 * [For Validators](tutorials/validators.md)
-* [Resetting a validator node](tutorials/node-reset.md)
+  * [Resetting a validator node](tutorials/node-reset.md)
 
 ## Nibiru Clients and SDKs <a href="#clients" id="clients"></a>
 

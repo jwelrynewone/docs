@@ -4,7 +4,7 @@ description: Instructions running a validator node
 
 # Validating on Testnet
 
-As the first step, please follow the [instructions](./joining-testnet/) to join the testnet.
+As the first step, please follow the [instructions to join the testnet](./testnet.md).
 
 ## Install the `nibid` binary
 
@@ -36,7 +36,7 @@ Any participant in the network can become a validator by sending a `create-valid
  
 After a validator is created, NIBI holders can delegate NIBI to the validator, effectively adding stake to the validator's pool. The total stake of an address is the combination of NIBI bonded by delegators and NIBI self-bonded by the validator.
 
-Of all of the validators that sned a `staking create-validator` transaction, those with the highest total stake are designated members of the validator set. If a validator's total stake falls too low, that validator loses its validator privileges and becomes unable to participate in consensus or generate rewards. Over time, the maximum number of validators may be increased via on-chain governance proposals.
+Of all of the validators that send a `staking create-validator` transaction, those with the highest total stake are designated members of the validator set. If a validator's total stake falls too low, that validator loses its validator privileges and becomes unable to participate in consensus or generate rewards. Over time, the maximum number of validators may be increased via on-chain governance proposals.
 
 ```sh
 nibid tx staking create-validator \
