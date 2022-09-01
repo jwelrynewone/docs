@@ -6,16 +6,9 @@ description: A comprehensive guide on understanding the Nibiru Ecosystem.
 
 ## What is Nibiru?
 
-**Nibiru** is a sovereign proof-of-stake blockchain, open-source platform, and member of a family of interconnected blockchains that comprise the Cosmos Ecosystem. 
+**Nibiru** is a sovereign proof-of-stake blockchain, open-source platform, and member of a family of interconnected blockchains that comprise the Cosmos Ecosystem.&#x20;
+
 Nibiru unifies leveraged derivatives trading, spot trading, staking, and bonded liquidity provision into a seamless user experience, enabling users of over 40 blockchains to trade with leverage using a suite of composable decentralized applications.
-
-<!-- 
-A core blockchain scaling challenge is meeting transaction demand without becoming prohibitively expensive for retail traders. The promise of a multi-chain future has drawn interest towards Cosmos as an infinitely scalable solution to this problem. However, the ecosystem currently lacks tools for investing with complex financial positions.
--->
-
-Nibiru accurately prices assets using a native, system of decentralized [oracles](content/price-feed-oracles.md), and communicates with other Cosmos layer-1 chains using the [Inter-Blockchain Communication (IBC)](https://github.com/cosmos/ibc) protocol.
-
-The security of the Nibiru blockchain relies on a set of validators to commit new blocks and participate in Tendermint BFT consensus by brodcasting votes that contain cryptographic signatures signed by each validator's private key. Validators stake **NIBI**, the protocol's native token used for gas, governance, and "mining". Users can delegate NIBI to validators that record and verify transactions in exchange for rewards.
 
 ## Nibiru Ecosystem
 
@@ -37,11 +30,17 @@ A perpetual futures exchange where users can take leveraged exposure and trade o
 
 Nibiru powers a two-token economic model, where NIBI is the staking and utility token for the protocol and NUSD is a capital-efficient, partially collateralized stablecoin for the protocol.
 
----
+{% content-ref url="concepts/price-feed-oracles.md" %}
+[price-feed-oracles.md](concepts/price-feed-oracles.md)
+{% endcontent-ref %}
+
+Nibiru accurately prices assets using a native, system of decentralized [oracles](content/price-feed-oracles.md), and communicates with other Cosmos layer-1 chains using the [Inter-Blockchain Communication (IBC)](https://github.com/cosmos/ibc) protocol.
+
+***
 
 ![](.gitbook/assets/cosmwasm-ibc-box.svg)
 
-###  CosmWasm Integration 
+### CosmWasm Integration
 
 Nibiru will also act as a permission-less and censorship resistant platform for developers to deploy smart contracts in Go and Rust.
 
@@ -51,8 +50,16 @@ Nibiru is IBC compliant at genesis and connected over 40 blockchains. IBC enable
 
 ![](<.gitbook/assets/cosmos-sdk-tendermint-box (1).svg>)
 
-### [Frequently Asked Questions (FAQ)](learn-more/faq.md)
+
+
+The security of the Nibiru blockchain relies on a set of validators to commit new blocks and participate in Tendermint BFT consensus by brodcasting votes that contain cryptographic signatures signed by each validator's private key. Validators stake **NIBI**, the protocol's native token used for gas, governance, and "mining". Users can delegate NIBI to validators that record and verify transactions in exchange for rewards.
+
+### Frequently Asked Questions (FAQ)
+
+{% content-ref url="learn-more/faq.md" %}
+[faq.md](learn-more/faq.md)
+{% endcontent-ref %}
 
 ### Contribution guidelines for this documentation
 
-You can contribute to improve this documentation on [GitHub](https://github.com/NibiruChain/docs) by submitting issues or opening a pull request.
+You can contribute to improve this documentation by submitting a [GitHub](https://github.com/NibiruChain/docs) issue or opening a pull request.
