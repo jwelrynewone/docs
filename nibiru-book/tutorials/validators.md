@@ -83,6 +83,7 @@ When a validator is "jailed" for downtime, you must submit a `slashing unjail` t
 nibid tx slashing unjail \
   --from=<key_name> \
   --chain-id=<chain_id>
+  --fees 500unibi
 ```
 
 ## Confirming your validator is running 
@@ -91,6 +92,10 @@ Your validator is active if the following command returns anything:
 
 ```bash
 nibid query tendermint-validator-set | grep "$(nibid tendermint show-address)"
+
+nibid query staking validator <valoper_address>
+nibid query staking validators --limit 1000000 -o json | jq '.validators[] | select(.description.moniker=="<name_moniker>")' | jq
+
 ```
 
 You should now see your validator in one of Nibiru explorers. You are looking for the `bech32` encoded `address` in the `~/.nibid/config/priv_validator.json` file.
